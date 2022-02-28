@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1e355cb0e6e571349b3f22848f051f3a, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 90df92f3ea197a145bc46138fda0732c, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -4188,7 +4188,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -7958,13 +7958,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: 0.09371158, z: -0, w: 0.9955994}
+  m_LocalRotation: {x: -0, y: 0.414699, z: -0, w: 0.9099587}
   m_LocalPosition: {x: 5.598, y: 2.827, z: 0.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 10.754, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 49.001, z: 0}
 --- !u!1 &1002801636
 GameObject:
   m_ObjectHideFlags: 0
@@ -11891,7 +11891,7 @@ GameObject:
   - component: {fileID: 1801112514}
   - component: {fileID: 1801112515}
   m_Layer: 0
-  m_Name: Area Light
+  m_Name: Bathroom Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11962,7 +11962,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
