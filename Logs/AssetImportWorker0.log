@@ -216,3 +216,4 @@ Received Import Request.
 Start importing Assets/3Dfrk/Frames with pictures/Prefabs/Paint_04.prefab using Guid(7e9db585073230b438ac03f1ddea8b07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38e9bb796038d9a48ec6b926d27a6356') in 0.011867 seconds 
   Import took 0.015771 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
