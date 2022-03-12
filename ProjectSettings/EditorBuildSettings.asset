@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene 1.unity
     guid: f7ddd5dc601c95549a48743cc8d48bd5
+  - enabled: 1
+    path: Assets/Scenes/GrassFlowers.unity
+    guid: a167448f01f9ec346abdf86fec38ac64
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 4977289a447ebcb4290acd6140d56487, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b7e1960d6ae93f14e95d59aab0d514e4, type: 2}
