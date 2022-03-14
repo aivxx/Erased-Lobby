@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinGame : MonoBehaviour
+public class WinGameClues : MonoBehaviour
 {
     public GameObject uiMenu;
     public AudioSource playSound;
