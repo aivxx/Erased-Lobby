@@ -22,9 +22,18 @@ public class SceneLoader : Singleton<SceneLoader>
     Coroutine m_fadeCoroutine = null;
     static readonly int m_fadeAmountPropID = Shader.PropertyToID("_FadeAmount");
 
+    Scene m_persistentScene;
+
     private void Awake()
     {
         SceneManager.sceneLoaded += SetActiveScene;
+
+        m_persistentScene = SceneManager.GetActiveScene();
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= SetActiveScene;
     }
 
     public void LoadScene(string name)
@@ -39,6 +48,7 @@ public class SceneLoader : Singleton<SceneLoader>
     void SetActiveScene(Scene scene, LoadSceneMode mode)
     {
         SceneManager.SetActiveScene(scene);
+        SceneUtils.AlignXRRig(m_persistentScene, scene);
     }
 
     IEnumerator Load(string name)
