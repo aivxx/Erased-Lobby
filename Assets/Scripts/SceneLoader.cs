@@ -29,6 +29,12 @@ public class SceneLoader : Singleton<SceneLoader>
         SceneManager.sceneLoaded += SetActiveScene;
 
         m_persistentScene = SceneManager.GetActiveScene();
+
+
+        if(!Application.isEditor)
+        {
+            SceneManager.LoadSceneAsync(SceneUtils.Names.Lobby, LoadSceneMode.Additive);
+        }
     }
 
     private void OnDestroy()
