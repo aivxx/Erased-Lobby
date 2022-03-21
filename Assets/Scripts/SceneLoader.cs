@@ -14,8 +14,8 @@ public class SceneLoader : Singleton<SceneLoader>
     [Range(0.0f, 5.0f)]
     public float addedWaitTime = 2.0f;
 
-    UnityEvent onLoadStart = new UnityEvent();
-    UnityEvent onLoadFinish = new UnityEvent();
+    public UnityEvent onLoadStart = new UnityEvent();
+    public UnityEvent onLoadFinish = new UnityEvent();
 
     bool m_isLoading = false;
     float m_fadeAmount = 0.0f;

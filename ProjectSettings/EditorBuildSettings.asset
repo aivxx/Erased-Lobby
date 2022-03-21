@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PersistentScene.unity
+    guid: 7b25dc4b4403dc44485dccced934d493
+  - enabled: 1
     path: Assets/Scenes/SampleScene 1.unity
     guid: f7ddd5dc601c95549a48743cc8d48bd5
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/GrassFlowers.unity
     guid: a167448f01f9ec346abdf86fec38ac64
   - enabled: 1
-    path: Assets/Scenes/Maze.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/ComplexInteractions.unity
+    guid: 2c2326d74c94be84c9ec408b85af4775
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 875e5acac040f8942bbc9ded63fbb1f6, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 38f75c05ab3e88846bb5912290536ee3, type: 2}
