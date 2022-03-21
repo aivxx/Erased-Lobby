@@ -435,7 +435,7 @@ CBUFFER_END
 
 // Object and Global properties
 SAMPLER(SamplerState_Linear_Repeat);
-TEXTURE2D(_MainTex);
+TEXTURE2D_X(_MainTex);
 SAMPLER(sampler_MainTex);
 
 // Graph Functions
@@ -668,7 +668,7 @@ CBUFFER_END
 
 // Object and Global properties
 SAMPLER(SamplerState_Linear_Repeat);
-TEXTURE2D(_MainTex);
+TEXTURE2D_X(_MainTex);
 SAMPLER(sampler_MainTex);
 
 // Graph Functions
@@ -920,7 +920,7 @@ CBUFFER_END
 
 // Object and Global properties
 SAMPLER(SamplerState_Linear_Repeat);
-TEXTURE2D(_MainTex);
+TEXTURE2D_X(_MainTex);
 SAMPLER(sampler_MainTex);
 
 // Graph Functions
@@ -957,7 +957,7 @@ SurfaceDescription SurfaceDescriptionFunction(SurfaceDescriptionInputs IN)
 {
     SurfaceDescription surface = (SurfaceDescription)0;
     UnityTexture2D _Property_8d7e37695ac049219a89b7ddc961c0be_Out_0 = UnityBuildTexture2DStructNoScale(_MainTex);
-    float4 _SampleTexture2D_86394aedcd9d4dcbb0c8f85cac838f79_RGBA_0 = SAMPLE_TEXTURE2D(_Property_8d7e37695ac049219a89b7ddc961c0be_Out_0.tex, _Property_8d7e37695ac049219a89b7ddc961c0be_Out_0.samplerstate, IN.uv0.xy);
+    float4 _SampleTexture2D_86394aedcd9d4dcbb0c8f85cac838f79_RGBA_0 = SAMPLE_TEXTURE2D_X(_Property_8d7e37695ac049219a89b7ddc961c0be_Out_0.tex, _Property_8d7e37695ac049219a89b7ddc961c0be_Out_0.samplerstate, UnityStereoTransformScreenSpaceTex(IN.uv0.xy));
     float _SampleTexture2D_86394aedcd9d4dcbb0c8f85cac838f79_R_4 = _SampleTexture2D_86394aedcd9d4dcbb0c8f85cac838f79_RGBA_0.r;
     float _SampleTexture2D_86394aedcd9d4dcbb0c8f85cac838f79_G_5 = _SampleTexture2D_86394aedcd9d4dcbb0c8f85cac838f79_RGBA_0.g;
     float _SampleTexture2D_86394aedcd9d4dcbb0c8f85cac838f79_B_6 = _SampleTexture2D_86394aedcd9d4dcbb0c8f85cac838f79_RGBA_0.b;
@@ -1169,7 +1169,7 @@ CBUFFER_END
 
 // Object and Global properties
 SAMPLER(SamplerState_Linear_Repeat);
-TEXTURE2D(_MainTex);
+TEXTURE2D_X(_MainTex);
 SAMPLER(sampler_MainTex);
 
 // Graph Functions
@@ -1401,7 +1401,7 @@ CBUFFER_END
 
 // Object and Global properties
 SAMPLER(SamplerState_Linear_Repeat);
-TEXTURE2D(_MainTex);
+TEXTURE2D_X(_MainTex);
 SAMPLER(sampler_MainTex);
 
 // Graph Functions
