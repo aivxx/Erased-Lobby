@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public static class SceneUtils 
 {
+
+    public enum SceneId
+    {
+        Lobby,
+        Maze, 
+        ComplexInteractions,
+        SecretTree
+    }
+
+    public static readonly string[] scene = { Names.Lobby, Names.Maze, Names.ComplexInteractions, Names.SecretTree };
    public static class Names
     {
         public static readonly string PersistentScene = "PersistentScene";

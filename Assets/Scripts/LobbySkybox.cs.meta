@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c94d82ac57f1b604097c24b7a488afbe
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - LobbySky: {fileID: 2100000, guid: 16cc911a36f056948b8ec1ee1684b207, type: 2}
+  - DefaultSky: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  - TreeSky: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
