@@ -1013,6 +1013,77 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XROrigin: {fileID: 788973767}
+--- !u!1 &841161890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2129523095900255354, guid: 2b761605e586997478e54ac388469df1, type: 3}
+  m_PrefabInstance: {fileID: 1477330697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &841161891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841161890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f25a0ee6021934fb737c4fe5ebedb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 1
+  trackedAction:
+    m_Name: Tracked
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c27e6158-bc46-45bd-b629-e9593628081e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a58e1ce3-c5b0-41eb-a504-67ef3e476ae1
+      m_Path: <XRController>{RightHand}/isTracked
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tracked
+      m_Flags: 0
+    m_Flags: 0
+  gripAction:
+    m_Name: Grip
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 722d0129-27ed-49ea-a651-2e4f5ffabe5b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 394bf11c-511f-4893-a950-c971b2d23d61
+      m_Path: <XRController>{RightHand}/grip
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grip
+      m_Flags: 0
+    m_Flags: 0
+  triggerAction:
+    m_Name: Trigger
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 020b31b3-8e84-4a3c-b671-19b1c9ff9508
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ce002a1b-c938-4b0f-bdda-c6f88cec0f3f
+      m_Path: <XRController>{RightHand}/trigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Trigger
+      m_Flags: 0
+    m_Flags: 0
+  handAnimator: {fileID: 0}
+  interactor: {fileID: 349108892}
 --- !u!1 &1087700574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,6 +1408,77 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1450129236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1747110544411011939, guid: ea380e74b2c316449bdb6e25a65643c3, type: 3}
+  m_PrefabInstance: {fileID: 2122632487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1450129237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450129236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f25a0ee6021934fb737c4fe5ebedb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 0
+  trackedAction:
+    m_Name: Tracked
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 35fda168-3972-43f3-8f66-9c4aa7fd77b7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f9ce0ef1-9729-48a8-ae40-cac153be5ce8
+      m_Path: <XRController>{LeftHand}/isTracked
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tracked
+      m_Flags: 0
+    m_Flags: 0
+  gripAction:
+    m_Name: Grip
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 49ce108f-c622-4893-a899-e33f64010666
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f6622e5e-78d7-4f01-84d1-6fd27754cb68
+      m_Path: <XRController>{LeftHand}/grip
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grip
+      m_Flags: 0
+    m_Flags: 0
+  triggerAction:
+    m_Name: Trigger
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bb660905-c431-4f26-8002-a19f1309ebe1
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 691b5bf9-fc20-4d14-b630-40df845ee70c
+      m_Path: <XRController>{LeftHand}/trigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Trigger
+      m_Flags: 0
+    m_Flags: 0
+  handAnimator: {fileID: 0}
+  interactor: {fileID: 486083482}
 --- !u!1001 &1477330697
 PrefabInstance:
   m_ObjectHideFlags: 0
