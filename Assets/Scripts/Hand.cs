@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,7 +20,9 @@ public class Hand : MonoBehaviour
     public HandType type = HandType.Left;
     public bool isHidden { get; private set; } = false;
 
-    public InputAction trackedAction = null;
+    [SerializeField] InputAction trackedAction = null;
+    [SerializeField] InputAction gripAction = null;
+    [SerializeField] InputAction triggerAction = null;
 
     bool m_isCurrentlyTracked = false;
 
@@ -58,6 +63,8 @@ public class Hand : MonoBehaviour
     {
         m_colliders = GetComponentsInChildren<Collider>().Where(childCollider => !childCollider.isTrigger).ToArray();
         trackedAction.Enable();
+        gripAction.Enable();
+        triggerAction.Enable();
         Hide();
     }
 

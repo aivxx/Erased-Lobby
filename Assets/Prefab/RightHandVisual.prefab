@@ -39,6 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129523095900255355}
+  - component: {fileID: 5296984485606915656}
   m_Layer: 0
   m_Name: RightHandVisual
   m_TagString: Untagged
@@ -62,6 +63,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &5296984485606915656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129523095900255354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f25a0ee6021934fb737c4fe5ebedb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 1
+  trackedAction:
+    m_Name: Tracked
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ddd3b142-8d92-4b39-bcdd-2087733f0ab2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 33f9af21-c5c7-4d3b-aee7-33dabcc230b4
+      m_Path: <XRController>{RightHand}/isTracked
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tracked
+      m_Flags: 0
+    m_Flags: 0
+  gripAction:
+    m_Name: Grip
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 49c0800b-b2e8-4ea3-9aad-52400a317131
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 653ddcd2-b29c-4b6f-b6b5-14acbfc24740
+      m_Path: <XRController>{RightHand}/grip
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grip
+      m_Flags: 0
+    m_Flags: 0
+  triggerAction:
+    m_Name: Trigger
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 91b3aafd-b76a-45dc-9545-0c4397abd2ae
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 15d909ba-f4f2-4cfb-bf2f-65909844220c
+      m_Path: <XRController>{RightHand}/trigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Trigger
+      m_Flags: 0
+    m_Flags: 0
+  interactor: {fileID: 0}
 --- !u!1001 &1534863131161956711
 PrefabInstance:
   m_ObjectHideFlags: 0
