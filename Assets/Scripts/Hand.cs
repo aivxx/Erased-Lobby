@@ -34,6 +34,8 @@ public class Hand : MonoBehaviour
 
     public XRBaseInteractor interactor = null;
 
+    public bool hideOnTrackingLoss = true;
+
     public void Awake()
     {
         if(interactor == null)
@@ -45,8 +47,8 @@ public class Hand : MonoBehaviour
     [Obsolete]
     private void OnEnable()
     {
-        interactor.onSelectEntered.AddListener(OnGrab);
-        interactor.onSelectExited.AddListener(OnRelease);
+        interactor?.onSelectEntered.AddListener(OnGrab);
+        interactor?.onSelectExited.AddListener(OnRelease);
 
 
     }
@@ -54,8 +56,8 @@ public class Hand : MonoBehaviour
     [Obsolete]
     private void OnDisable()
     {
-        interactor.onSelectEntered.RemoveListener(OnGrab);
-        interactor.onSelectExited.RemoveListener(OnRelease);
+        interactor?.onSelectEntered.RemoveListener(OnGrab);
+        interactor?.onSelectExited.RemoveListener(OnRelease);
     }
 
     // Start is called before the first frame update
@@ -65,7 +67,7 @@ public class Hand : MonoBehaviour
         trackedAction.Enable();
         gripAction.Enable();
         triggerAction.Enable();
-        Hide();
+        if(hideOnTrackingLoss) Hide();
     }
 
     // Update is called once per frame
@@ -81,7 +83,7 @@ public class Hand : MonoBehaviour
             (isTracked == 0 && m_isCurrentlyTracked)
         {
             m_isCurrentlyTracked = false;
-            Hide();
+            if(hideOnTrackingLoss) Hide();
         }
         
     }
