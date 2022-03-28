@@ -146,7 +146,15 @@ MonoBehaviour:
     m_Id: 6e65e52d-d57b-494d-a744-f6fb7a836994
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f78a5758-160d-4abb-8ad1-e68741afff02
+      m_Path: <XRController>{LeftHand}/isTracked
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tracked
+      m_Flags: 0
     m_Flags: 0
   gripAction:
     m_Name: Grip
@@ -155,7 +163,15 @@ MonoBehaviour:
     m_Id: 5aa65ace-e602-4887-86d4-70057241a839
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b20d955f-92f2-49c1-bf1e-fec7aee7ab41
+      m_Path: <XRController>{LeftHand}/grip
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grip
+      m_Flags: 0
     m_Flags: 0
   triggerAction:
     m_Name: Trigger
@@ -164,7 +180,15 @@ MonoBehaviour:
     m_Id: 5d3781c7-8ab8-4fdc-956f-35197062eff2
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 09e69326-1cbf-4383-80d7-5a04b9d55a2a
+      m_Path: <XRController>{LeftHand}/trigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Trigger
+      m_Flags: 0
     m_Flags: 0
   interactor: {fileID: 0}
   hideOnTrackingLoss: 0
