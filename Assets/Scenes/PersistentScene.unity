@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 16cc911a36f056948b8ec1ee1684b207, type: 2}
   m_HaloStrength: 0.131
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.568141, g: 0.47480905, b: 0.31747293, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000002, guid: 8f2653085f17bcf458f34cf3b260cf5a, type: 2}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f82faf220c653b542b291e9d21a75024, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1562,7 +1562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finer: 4
+  finger: 0
 --- !u!114 &1477330740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,7 +1575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finer: 3
+  finger: 0
 --- !u!114 &1477330741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finer: 2
+  finger: 0
 --- !u!114 &1477330742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finer: 1
+  finger: 0
 --- !u!114 &1477330743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1614,7 +1614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finer: 0
+  finger: 0
 --- !u!114 &1477330744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1805,7 +1805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finer: 4
+  finger: 0
 --- !u!114 &2122632496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1818,7 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finer: 3
+  finger: 0
 --- !u!114 &2122632497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1831,7 +1831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finer: 2
+  finger: 0
 --- !u!114 &2122632498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1844,7 +1844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finer: 1
+  finger: 0
 --- !u!114 &2122632499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1857,4 +1857,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finer: 0
+  finger: 0
