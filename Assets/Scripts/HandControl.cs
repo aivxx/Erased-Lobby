@@ -15,6 +15,18 @@ public class HandControl : MonoBehaviour
 
 
     public bool hideHand = false;
+    public HandPose leftHandPose = null;
+    public HandPose rightHandPose = null;
+
+    public HandPose GetHandPose(HandType type)
+    {
+        switch(type)
+        {
+            case HandType.Left: return leftHandPose;
+            case HandType.Right: return rightHandPose;
+            default: return null;
+        }
+    }
 
 
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Animations.Rigging;
 
 public enum HandType
 {
@@ -35,12 +36,27 @@ public class Hand : MonoBehaviour
     public XRBaseInteractor interactor = null;
 
     public bool hideOnTrackingLoss = true;
+    public float poseAnimationSpeed = 10.0f;//meters per second
+
+
+    HandPose m_currentPose = null;
+    Rig m_handPosingRig = null;
+    float m_targetPoseWeight = 0.0f;
+    Coroutine m_poseAnimationCoroutine = null;
+    FingerPoser[] m_fingers = null;
+
 
     public void Awake()
     {
+
         if(interactor == null)
         {
             interactor = GetComponentInParent<XRBaseInteractor>();
+        }
+
+        if(m_handPosingRig == null)
+        {
+            m_handPosingRig = GetComponentInChildren<Rig>();
         }
     }
 
@@ -67,6 +83,10 @@ public class Hand : MonoBehaviour
         trackedAction.Enable();
         gripAction.Enable();
         triggerAction.Enable();
+
+        if (m_handPosingRig != null) m_handPosingRig.weight = 0.0f;
+        m_fingers = GetComponentsInChildren<FingerPoser>();
+
         if(hideOnTrackingLoss) Hide();
     }
 
@@ -134,6 +154,15 @@ public class Hand : MonoBehaviour
             { 
                 Hide();
             }
+            else
+            {
+                HandPose pose = ctrl.GetHandPose(type);
+                if(pose != null)
+                {
+                    m_currentPose = pose;
+                    AnimateHandPoseWeightTo(1.0f);
+                }
+            }
         } 
         
     }
@@ -148,7 +177,72 @@ public class Hand : MonoBehaviour
             {
                 Show();
             }
+            else if(m_currentPose !=null)
+            {
+                AnimateHandPoseWeightTo(0.0f);
+                m_currentPose = null;
+            }
         } 
         
+    }
+
+    IEnumerator AnimateHand()
+    {
+        while(!Mathf.Approximately(m_handPosingRig.weight, m_targetPoseWeight))
+        {
+            m_handPosingRig.weight = Mathf.MoveTowards(m_handPosingRig.weight, m_targetPoseWeight, poseAnimationSpeed * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    void AnimateHandPoseWeightTo(float targetWeight)
+    {
+        if (m_poseAnimationCoroutine != null)
+        {
+            StopCoroutine(m_poseAnimationCoroutine);
+        }
+        m_targetPoseWeight = targetWeight;
+        m_poseAnimationCoroutine = StartCoroutine(AnimateHand());
+    }
+
+   void SyncTransform(Transform finger, Pose fingerPose)
+    {
+
+        Vector3 position = interactor.attachTransform.TransformPoint(fingerPose.position);
+        Quaternion rotation = interactor.attachTransform.rotation * fingerPose.rotation;
+
+        finger.SetPositionAndRotation(position, rotation);
+    }
+
+    void SyncRigToPose()
+    {
+        if (interactor == null || m_currentPose == null) return;
+        if(interactor.attachTransform == null)
+        {
+            Debug.LogError("Interactor is missing an attach transform.");
+        }
+
+        foreach(var finger in m_fingers)
+        {
+            switch(finger.finger)
+            {
+                case FingerId.Thumb:
+                    SyncTransform(finger.transform, m_currentPose.thumb);
+                    break;
+                    case FingerId.Index:
+                    SyncTransform(finger.transform, m_currentPose.index);
+                    break;
+                    case FingerId.Middle:
+                    SyncTransform(finger.transform, m_currentPose.middle);
+                    break;
+                    case FingerId.Ring:
+                    SyncTransform(finger.transform, m_currentPose.ring);
+                    break;
+                    case FingerId.Pinky:
+                    SyncTransform(finger.transform, m_currentPose.pinky);
+                    break;
+
+            }
+        }
     }
 }
