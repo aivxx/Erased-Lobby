@@ -13,5 +13,5 @@ public enum FingerId
 }
 public class FingerPoser : MonoBehaviour
 {
-    public FingerId finer = FingerId.Thumb;
+    public FingerId finger = FingerId.Thumb;
 }
