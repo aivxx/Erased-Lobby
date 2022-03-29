@@ -107,7 +107,7 @@ public class PoseCreatorWindow : EditorWindow
         if ((m_fingers == null || m_currentHand == null) && m_currentHandObject != null)
         {
             m_currentHand = m_currentHandObject.GetComponentInChildren<Hand>();
-            m_fingers = m_currentHand.GetComponentsInChildren<FingerPose>();
+            m_fingers = m_currentHand.GetComponentsInChildren<FingerPoser>();
         }
 
         EditorGUILayout.LabelField("Path To Save Hand Poses");
@@ -128,7 +128,7 @@ public class PoseCreatorWindow : EditorWindow
         if (GUI.changed && m_currentHandObject != null)
         {
             m_currentHand = m_currentHandObject.GetComponentInChildren<Hand>();
-            m_fingers = m_currentHand.GetComponentsInChildren<FingerPose>();
+            m_fingers = m_currentHand.GetComponentsInChildren<FingerPoser>();
             GUI.changed = false;
         }
         else if (GUI.changed && m_currentHandObject == null)
