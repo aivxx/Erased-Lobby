@@ -25,6 +25,11 @@ public class Hand : MonoBehaviour
     [SerializeField] InputAction gripAction = null;
     [SerializeField] InputAction triggerAction = null;
 
+    public Animator handAnimator = null;
+
+    int m_gripAmountParameter = 0;
+    int m_pointAmountParameter = 0;
+
     bool m_isCurrentlyTracked = false;
 
     List<MeshRenderer> m_currentRenderers = new List<MeshRenderer>();
@@ -37,13 +42,18 @@ public class Hand : MonoBehaviour
 
     public bool hideOnTrackingLoss = true;
     public float poseAnimationSpeed = 10.0f;//meters per second
+    public bool enableGripAnimations = true;
 
+    public GameObject handVisual = null;
 
     HandPose m_currentPose = null;
     Rig m_handPosingRig = null;
     float m_targetPoseWeight = 0.0f;
     Coroutine m_poseAnimationCoroutine = null;
     FingerPoser[] m_fingers = null;
+    Vector3 m_restorePosition = Vector3.zero;
+    Quaternion m_restoreRotation = Quaternion.identity;
+    Transform m_currentFixedAttachment = null;
 
 
     public void Awake()
@@ -90,6 +100,15 @@ public class Hand : MonoBehaviour
         if(hideOnTrackingLoss) Hide();
     }
 
+    void UpdateAnimations()
+    {
+        float pointAmount = triggerAction.ReadValue<float>();
+        handAnimator.SetFloat(m_pointAmountParameter, enableGripAnimations ? pointAmount : 0);
+
+        float gripAmount = gripAction.ReadValue<float>();
+        handAnimator.SetFloat(m_gripAmountParameter, enableGripAnimations ? Mathf.Clamp01(gripAmount + pointAmount) : 0);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -105,6 +124,9 @@ public class Hand : MonoBehaviour
             m_isCurrentlyTracked = false;
             if(hideOnTrackingLoss) Hide();
         }
+
+        UpdateAnimations();
+        SyncRigToPose();
         
     }
 
@@ -150,6 +172,11 @@ public class Hand : MonoBehaviour
         HandControl ctrl = grabbedObject.GetComponent<HandControl>();
         if(ctrl != null)
         {
+            if(ctrl.disableCollisions)
+            {
+                EnableCollisions(false);
+            }
+
             if(ctrl.hideHand)
             { 
                 Hide();
@@ -160,6 +187,13 @@ public class Hand : MonoBehaviour
                 if(pose != null)
                 {
                     m_currentPose = pose;
+                    if(ctrl.fixedAttachment != null)
+                    {
+                        m_currentFixedAttachment = ctrl.fixedAttachment;
+                        m_restorePosition = handVisual.transform.localPosition;
+                        m_restoreRotation = handVisual.transform.localRotation;
+                    }
+
                     AnimateHandPoseWeightTo(1.0f);
                 }
             }
@@ -220,6 +254,11 @@ public class Hand : MonoBehaviour
         if(interactor.attachTransform == null)
         {
             Debug.LogError("Interactor is missing an attach transform.");
+        }
+
+        if(m_currentFixedAttachment !=null)
+        {
+
         }
 
         foreach(var finger in m_fingers)

@@ -15,8 +15,10 @@ public class HandControl : MonoBehaviour
 
 
     public bool hideHand = false;
+    public bool disableCollisions = false;
     public HandPose leftHandPose = null;
     public HandPose rightHandPose = null;
+    public Transform fixedAttachment = null;
 
     public HandPose GetHandPose(HandType type)
     {
