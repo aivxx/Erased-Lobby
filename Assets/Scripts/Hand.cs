@@ -214,6 +214,14 @@ public class Hand : MonoBehaviour
             else if(m_currentPose !=null)
             {
                 AnimateHandPoseWeightTo(0.0f);
+
+                if(m_currentFixedAttachment !=null)
+                {
+                    handVisual.transform.localPosition = m_restorePosition;
+                    handVisual.transform.localRotation = m_restoreRotation;
+                    m_currentFixedAttachment = null;
+                }
+
                 m_currentPose = null;
             }
         } 
@@ -258,7 +266,7 @@ public class Hand : MonoBehaviour
 
         if(m_currentFixedAttachment !=null)
         {
-
+            HandControl.AlignHandToAttachment(handVisual.transform, interactor.attachTransform, m_currentFixedAttachment);
         }
 
         foreach(var finger in m_fingers)

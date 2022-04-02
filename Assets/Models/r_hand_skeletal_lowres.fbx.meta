@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 1c8f95d7136d49a4e80263cb668d1e6b
+guid: c2db6783ee671504696caf33963ce9e2
 ModelImporter:
-  serializedVersion: 20200
+  serializedVersion: 21100
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: 5712509923591452515
+    second: r_hand_skeletal_lowres
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -93,11 +93,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 16663957a17a87e4e860fdd26fc3465c, type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 2
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
