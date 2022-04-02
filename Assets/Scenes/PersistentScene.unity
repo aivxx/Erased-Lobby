@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.568141, g: 0.47480905, b: 0.31747293, a: 1}
+  m_IndirectSpecularColor: {r: 0.7785708, g: 0.7185149, b: 0.599079, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1344,19 +1344,14 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 8539744345454361481, guid: 2b761605e586997478e54ac388469df1, type: 3}
-      propertyPath: handAnimator
+      propertyPath: interactor
       value: 
-      objectReference: {fileID: 1477330699}
+      objectReference: {fileID: 349108892}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b761605e586997478e54ac388469df1, type: 3}
 --- !u!4 &1477330698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2129523095900255355, guid: 2b761605e586997478e54ac388469df1, type: 3}
-  m_PrefabInstance: {fileID: 1477330697}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1477330699 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 754501545058346042, guid: 2b761605e586997478e54ac388469df1, type: 3}
   m_PrefabInstance: {fileID: 1477330697}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1681577277
@@ -1447,6 +1442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftHandVisual
       objectReference: {fileID: 0}
+    - target: {fileID: 6945416972068797581, guid: ea380e74b2c316449bdb6e25a65643c3, type: 3}
+      propertyPath: interactor
+      value: 
+      objectReference: {fileID: 486083482}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea380e74b2c316449bdb6e25a65643c3, type: 3}
 --- !u!4 &2122632488 stripped
