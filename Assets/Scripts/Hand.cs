@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,14 +18,14 @@ public class Hand : MonoBehaviour
     public HandType type = HandType.Left;
     public bool isHidden { get; private set; } = false;
 
+   
+
     [SerializeField] InputAction trackedAction = null;
     [SerializeField] InputAction gripAction = null;
     [SerializeField] InputAction triggerAction = null;
 
     public Animator handAnimator = null;
 
-    int m_gripAmountParameter = 0;
-    int m_pointAmountParameter = 0;
 
     bool m_isCurrentlyTracked = false;
 
@@ -54,7 +51,12 @@ public class Hand : MonoBehaviour
     Vector3 m_restorePosition = Vector3.zero;
     Quaternion m_restoreRotation = Quaternion.identity;
     Transform m_currentFixedAttachment = null;
-
+    private float gripTarget;
+    private float triggerTarget;
+    private float gripCurrent;
+    private float triggerCurrent;
+    private string animatorGripParam = "Grip";
+    private string animatorTriggerParam = "Trigger";
 
     public void Awake()
     {
@@ -86,6 +88,7 @@ public class Hand : MonoBehaviour
         interactor?.onSelectExited.RemoveListener(OnRelease);
     }
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -98,16 +101,12 @@ public class Hand : MonoBehaviour
         m_fingers = GetComponentsInChildren<FingerPoser>();
 
         if(hideOnTrackingLoss) Hide();
+
+        handAnimator = GetComponent<Animator>();
+    
     }
 
-    void UpdateAnimations()
-    {
-        float pointAmount = triggerAction.ReadValue<float>();
-        handAnimator.SetFloat(m_pointAmountParameter, enableGripAnimations ? pointAmount : 0);
-
-        float gripAmount = gripAction.ReadValue<float>();
-        handAnimator.SetFloat(m_gripAmountParameter, enableGripAnimations ? Mathf.Clamp01(gripAmount + pointAmount) : 0);
-    }
+ 
 
     // Update is called once per frame
     void Update()
@@ -125,8 +124,10 @@ public class Hand : MonoBehaviour
             if(hideOnTrackingLoss) Hide();
         }
 
-        UpdateAnimations();
+      
         SyncRigToPose();
+        Animate();
+      
         
     }
 
@@ -290,6 +291,31 @@ public class Hand : MonoBehaviour
                     break;
 
             }
+        }
+    }
+
+    internal void SetGrip(float v)
+    {
+        gripTarget = v;
+    }
+
+    internal void SetTrigger(float v)
+    {
+        triggerTarget = v;
+    }
+
+    void Animate()
+    {
+        if(gripCurrent != gripTarget)
+        {
+            gripCurrent = Mathf.MoveTowards(gripCurrent, gripTarget, Time.deltaTime * poseAnimationSpeed);
+            handAnimator.SetFloat(animatorGripParam, gripCurrent);
+        }
+        
+        if(triggerCurrent != triggerTarget)
+        {
+            triggerCurrent = Mathf.MoveTowards(triggerCurrent, triggerTarget, Time.deltaTime * poseAnimationSpeed);
+            handAnimator.SetFloat(animatorTriggerParam, triggerCurrent);
         }
     }
 }

@@ -24,13 +24,13 @@ AvatarMask:
   - m_Path: hands:l_hand_world/hands:b_l_hand/hands:b_l_hand_ignore
     m_Weight: 1
   - m_Path: hands:l_hand_world/hands:b_l_hand/hands:b_l_index1
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: hands:l_hand_world/hands:b_l_hand/hands:b_l_index1/hands:b_l_index2
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: hands:l_hand_world/hands:b_l_hand/hands:b_l_index1/hands:b_l_index2/hands:b_l_index3
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: hands:l_hand_world/hands:b_l_hand/hands:b_l_index1/hands:b_l_index2/hands:b_l_index3/hands:b_l_index_ignore
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: hands:l_hand_world/hands:b_l_hand/hands:b_l_middle1
     m_Weight: 1
   - m_Path: hands:l_hand_world/hands:b_l_hand/hands:b_l_middle1/hands:b_l_middle2

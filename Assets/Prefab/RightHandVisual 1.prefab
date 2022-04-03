@@ -94,7 +94,6 @@ Transform:
   - {fileID: 4529321824897659145}
   - {fileID: 1707882094002708849}
   - {fileID: 1511065813739470766}
-  - {fileID: 5502040450291346141}
   m_Father: {fileID: 112640327463781524}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -152,63 +151,6 @@ MonoBehaviour:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
     m_Visible: 1
---- !u!1 &755496638861925975
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5502040450291346141}
-  - component: {fileID: 1944774904220332563}
-  m_Layer: 0
-  m_Name: ThumbPoser
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5502040450291346141
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755496638861925975}
-  m_LocalRotation: {x: 0.67774266, y: -0.51602304, z: 0.4161019, w: 0.31818917}
-  m_LocalPosition: {x: -0.011414766, y: -0.006394198, z: 0.015151471}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6734684660610118469}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1944774904220332563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755496638861925975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Weight: 1
-  m_Data:
-    m_Root: {fileID: 0}
-    m_Mid: {fileID: 0}
-    m_Tip: {fileID: 0}
-    m_Target: {fileID: 5502040450291346141}
-    m_Hint: {fileID: 0}
-    m_TargetPositionWeight: 1
-    m_TargetRotationWeight: 1
-    m_HintWeight: 1
-    m_MaintainTargetPositionOffset: 0
-    m_MaintainTargetRotationOffset: 0
-  m_SourceObjectsGUIToggle: 1
-  m_SettingsGUIToggle: 0
 --- !u!1 &782497598084521518
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,6 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1294260835248999226}
   - component: {fileID: 2423696581875518003}
+  - component: {fileID: 7714165773840033893}
   m_Layer: 0
   m_Name: IndexPoser
   m_TagString: Untagged
@@ -354,6 +297,19 @@ MonoBehaviour:
     m_MaintainTargetRotationOffset: 0
   m_SourceObjectsGUIToggle: 1
   m_SettingsGUIToggle: 0
+--- !u!114 &7714165773840033893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868464514118887200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finger: 1
 --- !u!1 &963221684143938720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +1737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7571437280582172967}
   - component: {fileID: 4590629050742446569}
+  - component: {fileID: 241895531274142349}
   m_Layer: 0
   m_Name: ThumbPoser
   m_TagString: Untagged
@@ -1828,6 +1785,19 @@ MonoBehaviour:
     m_MaintainTargetRotationOffset: 0
   m_SourceObjectsGUIToggle: 1
   m_SettingsGUIToggle: 0
+--- !u!114 &241895531274142349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401372775685813677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finger: 0
 --- !u!1 &3729949321108735353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,6 +1839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1707882094002708849}
   - component: {fileID: 4590629050742446575}
+  - component: {fileID: 2322413899862961038}
   m_Layer: 0
   m_Name: RingPoser
   m_TagString: Untagged
@@ -1916,6 +1887,19 @@ MonoBehaviour:
     m_MaintainTargetRotationOffset: 0
   m_SourceObjectsGUIToggle: 1
   m_SettingsGUIToggle: 0
+--- !u!114 &2322413899862961038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048584227365639393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finger: 3
 --- !u!1 &4104377193608125180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,6 +2255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4529321824897659145}
   - component: {fileID: 392267647208768009}
+  - component: {fileID: 7023189900141065497}
   m_Layer: 0
   m_Name: MiddlePoser
   m_TagString: Untagged
@@ -2318,6 +2303,19 @@ MonoBehaviour:
     m_MaintainTargetRotationOffset: 0
   m_SourceObjectsGUIToggle: 1
   m_SettingsGUIToggle: 0
+--- !u!114 &7023189900141065497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7811017841388792205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finger: 2
 --- !u!1 &7875236147044845226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2328,6 +2326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1511065813739470766}
   - component: {fileID: 4590629050742446574}
+  - component: {fileID: 965155258231427303}
   m_Layer: 0
   m_Name: PinkyPoser
   m_TagString: Untagged
@@ -2375,6 +2374,19 @@ MonoBehaviour:
     m_MaintainTargetRotationOffset: 0
   m_SourceObjectsGUIToggle: 1
   m_SettingsGUIToggle: 0
+--- !u!114 &965155258231427303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875236147044845226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d21bf989e52464c82fa87a15b42d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finger: 4
 --- !u!1 &7886575047017326548
 GameObject:
   m_ObjectHideFlags: 0

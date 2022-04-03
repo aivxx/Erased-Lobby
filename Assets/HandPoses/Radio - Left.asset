@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9b7b60380d5974a84f66ab17d7ea36, type: 3}
+  m_Name: Radio - Left
+  m_EditorClassIdentifier: 
+  thumb:
+    position: {x: 0.041816935, y: 0.06483098, z: -0.08841394}
+    rotation: {x: -0.5101724, y: 0.5934791, z: 0.59788674, w: -0.17331567}
+  index:
+    position: {x: -0.0071093887, y: 0.12603134, z: -0.04039243}
+    rotation: {x: -0.27675802, y: -0.015951402, z: 0.8196926, w: -0.50125337}
+  middle:
+    position: {x: -0.012013808, y: 0.091743015, z: -0.017320633}
+    rotation: {x: -0.23720282, y: -0.16352217, z: 0.8054025, w: -0.5179987}
+  ring:
+    position: {x: -0.009803906, y: 0.0682816, z: 0.0027386844}
+    rotation: {x: -0.2279631, y: -0.26742354, z: 0.7287214, w: -0.58777803}
+  pinky:
+    position: {x: -0.021359548, y: 0.0412985, z: 0.013307095}
+    rotation: {x: -0.17917393, y: -0.3771084, z: 0.6708215, w: -0.6129312}

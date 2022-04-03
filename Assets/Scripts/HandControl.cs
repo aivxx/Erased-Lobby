@@ -1,11 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 
 [ExecuteInEditMode]
 public class HandControl : MonoBehaviour
 {
+
+
+    ActionBasedController controller;
+    public Hand hand;
+
+    
+    public void Start()
+    {
+        controller = GetComponent<ActionBasedController>();
+    }
+
+    public void Update()
+    {
+        hand.SetGrip(controller.selectAction.action.ReadValue<float>());
+        hand.SetTrigger(controller.activateAction.action.ReadValue<float>());
+    }
 
     public static void AlignHandToAttachment(Transform handroot, Transform handGrabAttach, Transform interactableAttach)
     {
