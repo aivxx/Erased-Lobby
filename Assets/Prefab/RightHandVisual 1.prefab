@@ -85,7 +85,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715397434125345006}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.000000042146837, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -94,8 +94,8 @@ Transform:
   - {fileID: 4529321824897659145}
   - {fileID: 1707882094002708849}
   - {fileID: 1511065813739470766}
-  m_Father: {fileID: 112640327463781524}
-  m_RootOrder: 3
+  m_Father: {fileID: 2545270526292137347}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2731548740336405483
 MonoBehaviour:
@@ -161,8 +161,6 @@ GameObject:
   m_Component:
   - component: {fileID: 112640327463781524}
   - component: {fileID: 1070709513732046050}
-  - component: {fileID: 3794156103430456770}
-  - component: {fileID: 3094907804289790366}
   m_Layer: 0
   m_Name: r_hand_skeletal_lowres Variant
   m_TagString: Untagged
@@ -184,7 +182,6 @@ Transform:
   - {fileID: 5076092889809422805}
   - {fileID: 4694158891965551373}
   - {fileID: 1393434554696658753}
-  - {fileID: 6734684660610118469}
   m_Father: {fileID: 5508405067756046020}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -204,41 +201,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!95 &3794156103430456770
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782497598084521518}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c2db6783ee671504696caf33963ce9e2, type: 3}
-  m_Controller: {fileID: 9100000, guid: 9d8276d0b0297a74bbefcf4f7a5233bb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3094907804289790366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782497598084521518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RigLayers:
-  - m_Rig: {fileID: 2731548740336405483}
-    m_Active: 1
-  m_Effectors: []
 --- !u!1 &868464514118887200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,6 +1565,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2545270526292137347}
   - component: {fileID: 5214130203621644913}
+  - component: {fileID: 7557215575854406474}
+  - component: {fileID: 7041002639205247897}
   m_Layer: 0
   m_Name: RightHandVisual 1
   m_TagString: Untagged
@@ -1622,6 +1586,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5508405067756046020}
+  - {fileID: 6734684660610118469}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
@@ -1689,12 +1654,47 @@ MonoBehaviour:
       m_Action: Trigger
       m_Flags: 0
     m_Flags: 0
-  handAnimator: {fileID: 0}
+  handAnimator: {fileID: 7557215575854406474}
   interactor: {fileID: 0}
   hideOnTrackingLoss: 0
   poseAnimationSpeed: 10
   enableGripAnimations: 1
   handVisual: {fileID: 2545270526292137346}
+--- !u!95 &7557215575854406474
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2545270526292137346}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: c2db6783ee671504696caf33963ce9e2, type: 3}
+  m_Controller: {fileID: 9100000, guid: 2cd30fd784b8a2348ad1fd7c10773622, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7041002639205247897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2545270526292137346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RigLayers:
+  - m_Rig: {fileID: 2731548740336405483}
+    m_Active: 1
+  m_Effectors: []
 --- !u!1 &2591028271103837199
 GameObject:
   m_ObjectHideFlags: 0

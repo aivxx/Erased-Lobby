@@ -1,5 +1,4 @@
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,7 +8,7 @@ using UnityEngine.Animations.Rigging;
 
 public enum HandType
 {
-    Left,
+    Left, 
     Right
 };
 
@@ -18,125 +17,123 @@ public class Hand : MonoBehaviour
     public HandType type = HandType.Left;
     public bool isHidden { get; private set; } = false;
 
-   
+    public bool hideOnTrackingLoss = true;
+    public InputAction trackedAction = null;
 
-    [SerializeField] InputAction trackedAction = null;
-    [SerializeField] InputAction gripAction = null;
-    [SerializeField] InputAction triggerAction = null;
-
+    public InputAction gripAction = null;
+    public InputAction triggerAction = null;
     public Animator handAnimator = null;
+    public bool enableGripAnimations = true;
+    public float poseAnimationSpeed = 15.0f;
+    Coroutine m_poseAnimationCoroutine = null;
 
+    int m_gripAmountParameter = 0;
+    int m_pointAmountParameter = 0;
 
     bool m_isCurrentlyTracked = false;
 
-    List<MeshRenderer> m_currentRenderers = new List<MeshRenderer>();
+    List<Renderer> m_currentRenderers = new List<Renderer>();
 
     Collider[] m_colliders = null;
-
-    public bool isCollisionEnabled { get; private set; } = false;
+    public bool isCollisionEnabled { get; private set; } = true;
 
     public XRBaseInteractor interactor = null;
+    
 
-    public bool hideOnTrackingLoss = true;
-    public float poseAnimationSpeed = 10.0f;//meters per second
-    public bool enableGripAnimations = true;
-
+    public Transform grabAttachment = null;
     public GameObject handVisual = null;
 
+    Transform m_currentGrabbedAttach = null;
     HandPose m_currentPose = null;
-    Rig m_handPosingRig = null;
-    float m_targetPoseWeight = 0.0f;
-    Coroutine m_poseAnimationCoroutine = null;
-    FingerPoser[] m_fingers = null;
+    Transform m_currentPoseHandAttach = null;
     Vector3 m_restorePosition = Vector3.zero;
     Quaternion m_restoreRotation = Quaternion.identity;
-    Transform m_currentFixedAttachment = null;
-    private float gripTarget;
-    private float triggerTarget;
-    private float gripCurrent;
-    private float triggerCurrent;
-    private string animatorGripParam = "Grip";
-    private string animatorTriggerParam = "Trigger";
 
-    public void Awake()
+    float m_poseAnimationTarget = 0.0f;
+    Rig m_poseAnimationRig = null;
+    FingerPoser[] m_fingers = null;
+
+    private void Awake()
     {
-
-        if(interactor == null)
+        if (interactor == null)
         {
             interactor = GetComponentInParent<XRBaseInteractor>();
         }
 
-        if(m_handPosingRig == null)
+        if(m_poseAnimationRig == null)
         {
-            m_handPosingRig = GetComponentInChildren<Rig>();
+            m_poseAnimationRig = GetComponentInChildren<Rig>();
         }
     }
 
-    [Obsolete]
+    [System.Obsolete]
     private void OnEnable()
     {
         interactor?.onSelectEntered.AddListener(OnGrab);
         interactor?.onSelectExited.AddListener(OnRelease);
-
-
     }
 
-    [Obsolete]
+    [System.Obsolete]
     private void OnDisable()
     {
         interactor?.onSelectEntered.RemoveListener(OnGrab);
         interactor?.onSelectExited.RemoveListener(OnRelease);
     }
 
-    
     // Start is called before the first frame update
     void Start()
     {
         m_colliders = GetComponentsInChildren<Collider>().Where(childCollider => !childCollider.isTrigger).ToArray();
         trackedAction.Enable();
+        m_gripAmountParameter = Animator.StringToHash("GripAmount");
+        m_pointAmountParameter = Animator.StringToHash("PointAmount");
         gripAction.Enable();
         triggerAction.Enable();
 
-        if (m_handPosingRig != null) m_handPosingRig.weight = 0.0f;
         m_fingers = GetComponentsInChildren<FingerPoser>();
+        m_poseAnimationRig.weight = 0.0f;
 
-        if(hideOnTrackingLoss) Hide();
-
-        handAnimator = GetComponent<Animator>();
-    
+      if (hideOnTrackingLoss)  Hide();
     }
 
- 
+    void UpdateAnimations()
+    {
+        float pointAmount = triggerAction.ReadValue<float>();
+        handAnimator.SetFloat(m_pointAmountParameter, enableGripAnimations ? pointAmount : 0);
+
+        float gripAmount = gripAction.ReadValue<float>();
+        handAnimator.SetFloat(m_gripAmountParameter, enableGripAnimations ? Mathf.Clamp01(gripAmount + pointAmount) : 0);
+    }
 
     // Update is called once per frame
     void Update()
     {
         float isTracked = trackedAction.ReadValue<float>();
-        if (isTracked == 1.0f && !m_isCurrentlyTracked)
+        if(isTracked == 1.0f && !m_isCurrentlyTracked)
         {
             m_isCurrentlyTracked = true;
             Show();
-
-        }else if
-            (isTracked == 0 && m_isCurrentlyTracked)
+        }
+        else if(isTracked == 0 && m_isCurrentlyTracked)
         {
             m_isCurrentlyTracked = false;
             if(hideOnTrackingLoss) Hide();
         }
 
-      
+        if(isHidden && !hideOnTrackingLoss)
+        {
+            Show();
+        }
+
+        UpdateAnimations();
         SyncRigToPose();
-        Animate();
-      
-        
     }
 
     public void Show()
     {
-        foreach (MeshRenderer renderer in m_currentRenderers)
+        foreach (Renderer renderer in m_currentRenderers)
         {
             renderer.enabled = true;
-            
         }
         isHidden = false;
         EnableCollisions(true);
@@ -145,8 +142,8 @@ public class Hand : MonoBehaviour
     public void Hide()
     {
         m_currentRenderers.Clear();
-        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
-        foreach(MeshRenderer renderer in renderers)
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        foreach(Renderer renderer in renderers)
         {
             renderer.enabled = false;
             m_currentRenderers.Add(renderer);
@@ -157,7 +154,6 @@ public class Hand : MonoBehaviour
 
     public void EnableCollisions(bool enabled)
     {
-
         if (isCollisionEnabled == enabled) return;
 
         isCollisionEnabled = enabled;
@@ -169,153 +165,137 @@ public class Hand : MonoBehaviour
 
     void OnGrab(XRBaseInteractable grabbedObject)
     {
-       
         HandControl ctrl = grabbedObject.GetComponent<HandControl>();
+        if (ctrl.fixedAttachment == null)
+        {
+            m_currentGrabbedAttach = grabbedObject.GetComponent<XRGrabInteractable>().attachTransform;
+        }
+        else
+        {
+            m_currentGrabbedAttach = ctrl.fixedAttachment.transform;
+        }
+       
         if(ctrl != null)
         {
-            if(ctrl.disableCollisions)
-            {
-                EnableCollisions(false);
-            }
-
             if(ctrl.hideHand)
-            { 
+            {
                 Hide();
             }
             else
             {
-                HandPose pose = ctrl.GetHandPose(type);
+                HandPose pose = ctrl.PoseForHand(type);
                 if(pose != null)
                 {
                     m_currentPose = pose;
-                    if(ctrl.fixedAttachment != null)
+                    if (ctrl.fixedAttachment != null)
                     {
-                        m_currentFixedAttachment = ctrl.fixedAttachment;
+                        m_currentPoseHandAttach = ctrl.fixedAttachment;
                         m_restorePosition = handVisual.transform.localPosition;
                         m_restoreRotation = handVisual.transform.localRotation;
                     }
-
-                    AnimateHandPoseWeightTo(1.0f);
+                    AnimatePoseIn();
                 }
             }
-        } 
-        
+        }
+    }
+
+    void SyncTransform(Pose pose, Transform finger)
+    {
+        //Code here is different from videos. Disregard video for this part.
+        finger.SetPositionAndRotation(m_currentGrabbedAttach.TransformPoint(pose.position),m_currentGrabbedAttach.rotation * pose.rotation);
+    }
+
+    [System.Obsolete]
+    void SyncRigToPose()
+    {
+        //Code here is slightly different from the videos to avoid early returns when loading a pose without an active XR rig present.
+        var selected = interactor?.selectTarget;
+
+        if (grabAttachment == null || m_currentPose == null) return;
+
+        if(m_currentPoseHandAttach != null)
+            HandControl.AlignHandToAttachment(handVisual.transform, grabAttachment, m_currentPoseHandAttach);
+
+        foreach (var finger in m_fingers)
+        {
+            switch (finger.finger)
+            {
+                case FingerId.Thumb:
+                    SyncTransform(m_currentPose.thumb, finger.transform);
+                    break;
+                case FingerId.Index:
+                    SyncTransform(m_currentPose.index, finger.transform);
+                    break;
+                case FingerId.Middle:
+                    SyncTransform(m_currentPose.middle, finger.transform);
+                    break;
+                case FingerId.Ring:
+                    SyncTransform(m_currentPose.ring, finger.transform);
+                    break;
+                case FingerId.Pinky:
+                    SyncTransform(m_currentPose.pinky, finger.transform);
+                    break;
+            }
+        }
     }
 
     void OnRelease(XRBaseInteractable releasedObject)
     {
-       
         HandControl ctrl = releasedObject.GetComponent<HandControl>();
-        if (ctrl != null)
+        m_currentGrabbedAttach = null;
+        if(ctrl != null)
         {
-            if (ctrl.hideHand)
+            if(m_currentPose != null)
             {
-                Show();
-            }
-            else if(m_currentPose !=null)
-            {
-                AnimateHandPoseWeightTo(0.0f);
+                AnimatePoseOut();
 
-                if(m_currentFixedAttachment !=null)
+                //restore hand
+                if(m_currentPoseHandAttach != null)
                 {
                     handVisual.transform.localPosition = m_restorePosition;
                     handVisual.transform.localRotation = m_restoreRotation;
-                    m_currentFixedAttachment = null;
+                    m_currentPoseHandAttach = null;
                 }
-
+               
                 m_currentPose = null;
             }
-        } 
-        
-    }
-
-    IEnumerator AnimateHand()
-    {
-        while(!Mathf.Approximately(m_handPosingRig.weight, m_targetPoseWeight))
-        {
-            m_handPosingRig.weight = Mathf.MoveTowards(m_handPosingRig.weight, m_targetPoseWeight, poseAnimationSpeed * Time.deltaTime);
-            yield return null;
+            else if(ctrl.hideHand)
+            {
+                Show();
+            }
         }
     }
 
-    void AnimateHandPoseWeightTo(float targetWeight)
+    void AnimatePoseIn()
     {
+        m_poseAnimationTarget = 1.0f;
         if (m_poseAnimationCoroutine != null)
         {
             StopCoroutine(m_poseAnimationCoroutine);
         }
-        m_targetPoseWeight = targetWeight;
         m_poseAnimationCoroutine = StartCoroutine(AnimateHand());
     }
 
-   void SyncTransform(Transform finger, Pose fingerPose)
+    void AnimatePoseOut()
     {
-
-        Vector3 position = interactor.attachTransform.TransformPoint(fingerPose.position);
-        Quaternion rotation = interactor.attachTransform.rotation * fingerPose.rotation;
-
-        finger.SetPositionAndRotation(position, rotation);
+        m_poseAnimationTarget = 0.0f;
+        if (m_poseAnimationCoroutine != null)
+        {
+            StopCoroutine(m_poseAnimationCoroutine);
+        }
+        m_poseAnimationCoroutine = StartCoroutine(AnimateHand());
     }
 
-    void SyncRigToPose()
+    IEnumerator AnimateHand()
     {
-        if (interactor == null || m_currentPose == null) return;
-        if(interactor.attachTransform == null)
+        enableGripAnimations = false;
+        while(!Mathf.Approximately(m_poseAnimationTarget, m_poseAnimationRig.weight))
         {
-            Debug.LogError("Interactor is missing an attach transform.");
+            m_poseAnimationRig.weight = Mathf.MoveTowards(m_poseAnimationRig.weight, m_poseAnimationTarget, poseAnimationSpeed * Time.deltaTime);
+            yield return null;
         }
-
-        if(m_currentFixedAttachment !=null)
-        {
-            HandControl.AlignHandToAttachment(handVisual.transform, interactor.attachTransform, m_currentFixedAttachment);
-        }
-
-        foreach(var finger in m_fingers)
-        {
-            switch(finger.finger)
-            {
-                case FingerId.Thumb:
-                    SyncTransform(finger.transform, m_currentPose.thumb);
-                    break;
-                    case FingerId.Index:
-                    SyncTransform(finger.transform, m_currentPose.index);
-                    break;
-                    case FingerId.Middle:
-                    SyncTransform(finger.transform, m_currentPose.middle);
-                    break;
-                    case FingerId.Ring:
-                    SyncTransform(finger.transform, m_currentPose.ring);
-                    break;
-                    case FingerId.Pinky:
-                    SyncTransform(finger.transform, m_currentPose.pinky);
-                    break;
-
-            }
-        }
-    }
-
-    internal void SetGrip(float v)
-    {
-        gripTarget = v;
-    }
-
-    internal void SetTrigger(float v)
-    {
-        triggerTarget = v;
-    }
-
-    void Animate()
-    {
-        if(gripCurrent != gripTarget)
-        {
-            gripCurrent = Mathf.MoveTowards(gripCurrent, gripTarget, Time.deltaTime * poseAnimationSpeed);
-            handAnimator.SetFloat(animatorGripParam, gripCurrent);
-        }
-        
-        if(triggerCurrent != triggerTarget)
-        {
-            triggerCurrent = Mathf.MoveTowards(triggerCurrent, triggerTarget, Time.deltaTime * poseAnimationSpeed);
-            handAnimator.SetFloat(animatorTriggerParam, triggerCurrent);
-        }
+        //allow grip if animating pose out
+        if(m_poseAnimationTarget < 0.5f)
+            enableGripAnimations = true;
     }
 }
