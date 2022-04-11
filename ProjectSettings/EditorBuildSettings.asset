@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PersistentScene.unity
     guid: 7b25dc4b4403dc44485dccced934d493
   - enabled: 1
-    path: Assets/Scenes/SampleScene 1.unity
+    path: Assets/Scenes/Lobby.unity
     guid: f7ddd5dc601c95549a48743cc8d48bd5
   - enabled: 1
     path: Assets/Scenes/Maze.unity
