@@ -18,10 +18,11 @@ public class Hand : MonoBehaviour
     public bool isHidden { get; private set; } = false;
 
     public bool hideOnTrackingLoss = true;
-    public InputAction trackedAction = null;
 
+    public InputAction trackedAction = null;
     public InputAction gripAction = null;
     public InputAction triggerAction = null;
+
     public Animator handAnimator = null;
     public bool enableGripAnimations = true;
     public float poseAnimationSpeed = 15.0f;
@@ -32,7 +33,7 @@ public class Hand : MonoBehaviour
 
     bool m_isCurrentlyTracked = false;
 
-    List<Renderer> m_currentRenderers = new List<Renderer>();
+    List<SkinnedMeshRenderer> m_currentRenderers = new List<SkinnedMeshRenderer>();
 
     Collider[] m_colliders = null;
     public bool isCollisionEnabled { get; private set; } = true;
@@ -106,6 +107,7 @@ public class Hand : MonoBehaviour
     }
 
     // Update is called once per frame
+    [System.Obsolete]
     void Update()
     {
         float isTracked = trackedAction.ReadValue<float>();
@@ -131,7 +133,7 @@ public class Hand : MonoBehaviour
 
     public void Show()
     {
-        foreach (Renderer renderer in m_currentRenderers)
+        foreach (SkinnedMeshRenderer renderer in m_currentRenderers)
         {
             renderer.enabled = true;
         }
@@ -142,8 +144,8 @@ public class Hand : MonoBehaviour
     public void Hide()
     {
         m_currentRenderers.Clear();
-        Renderer[] renderers = GetComponentsInChildren<Renderer>();
-        foreach(Renderer renderer in renderers)
+        SkinnedMeshRenderer[] renderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+        foreach(SkinnedMeshRenderer renderer in renderers)
         {
             renderer.enabled = false;
             m_currentRenderers.Add(renderer);
