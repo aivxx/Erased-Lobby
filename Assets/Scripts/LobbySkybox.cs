@@ -6,7 +6,7 @@ public class LobbySkybox : MonoBehaviour
 {
     public Material LobbySky;
     public Material DefaultSky;
-    public Material TreeSky;
+    public Material SwampSky;
 
     // Start is called before the first frame update
     void Start()

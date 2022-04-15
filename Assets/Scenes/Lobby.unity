@@ -10626,7 +10626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LobbySky: {fileID: 2100000, guid: 16cc911a36f056948b8ec1ee1684b207, type: 2}
   DefaultSky: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  TreeSky: {fileID: 2100000, guid: 8b7dd0809c7c6498789fa32a61eaa6cb, type: 2}
+  SwampSky: {fileID: 2100000, guid: dfdf376a1c55c544985c997fa7820045, type: 2}
 --- !u!4 &1254262623
 Transform:
   m_ObjectHideFlags: 0

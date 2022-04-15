@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slybox : MonoBehaviour
+public class Skybox : MonoBehaviour
 {
 
     public Material LobbySky;
-    public Material MazeSky;
-    public Material InteractionsSky;
-    public Material TreeSky;
+    public Material SwampSky;
 
     // Start is called before the first frame update
     void Start()
