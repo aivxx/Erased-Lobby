@@ -9,19 +9,15 @@ public static class SceneUtils
     public enum SceneId
     {
         Lobby,
-        Maze, 
-        ComplexInteractions,
-        SecretTree
+        TVLevel
     }
 
-    public static readonly string[] scene = { Names.Lobby, Names.Maze, Names.ComplexInteractions, Names.SecretTree };
+    public static readonly string[] scene = { Names.Lobby, Names.TVLevel };
    public static class Names
     {
         public static readonly string PersistentScene = "PersistentScene";
-        public static readonly string Maze = "Maze";
-        public static readonly string ComplexInteractions = "ComplexInteractions";
+        public static readonly string TVLevel = "TVLevel";
         public static readonly string Lobby = "SampleScene 1";
-        public static readonly string SecretTree = "GrassFlowers";
     }
 
     public static void AlignXRRig(Scene persistentScene, Scene currentScene)

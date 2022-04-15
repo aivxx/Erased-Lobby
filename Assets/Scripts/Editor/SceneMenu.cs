@@ -15,23 +15,12 @@ public class SceneMenu : MonoBehaviour
         OpenScene(SceneUtils.Names.Lobby);
     }
 
-    [MenuItem("Scenes/Maze")]
-    static void OpenMaze()
+    [MenuItem("Scenes/TVLevel")]
+    static void OpenTVLevel()
     {
-        OpenScene(SceneUtils.Names.Maze);
+        OpenScene(SceneUtils.Names.TVLevel);
     }
 
-    [MenuItem("Scenes/ComplexInteractions")]
-    static void OpenComplexInteractions()
-    {
-        OpenScene(SceneUtils.Names.ComplexInteractions);
-    }
-
-    [MenuItem("Scenes/SecretTree")]
-    static void OpenSecretTree()
-    {
-        OpenScene(SceneUtils.Names.SecretTree);
-    }
 
     static void OpenScene(string name)
     {
