@@ -816,7 +816,6 @@ GameObject:
   - component: {fileID: 788973768}
   - component: {fileID: 788973767}
   - component: {fileID: 788973764}
-  - component: {fileID: 788973766}
   - component: {fileID: 788973769}
   - component: {fileID: 788973763}
   - component: {fileID: 788973765}
@@ -843,7 +842,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &788973762
 CapsuleCollider:
@@ -856,7 +855,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &788973763
@@ -956,20 +955,6 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &788973766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788973760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f41ed01e12351544a572a9d832bffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpActionReference: {fileID: -6874854966654271333, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  jumpForce: 5
 --- !u!114 &788973767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,7 +980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788973760}
   m_LocalRotation: {x: -0, y: 0.60537314, z: -0, w: 0.7959418}
-  m_LocalPosition: {x: -54, y: 16.31, z: 159}
+  m_LocalPosition: {x: 37.376, y: 2.758, z: -161.335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1681577278}
@@ -1414,7 +1399,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8433975604450671242, guid: cc04977b8ce6d7049a2764fb376c38e4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cc04977b8ce6d7049a2764fb376c38e4, type: 3}
 --- !u!1001 &5931134045095031996
 PrefabInstance:
@@ -1479,7 +1465,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftPoseableHand
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 90780270374401600, guid: 99903ada13a3370448a799dafc67c346, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 99903ada13a3370448a799dafc67c346, type: 3}
 --- !u!4 &5931134045095031997 stripped
 Transform:

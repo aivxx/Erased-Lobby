@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] private InputActionReference jumpActionReference;
-    [SerializeField] private float jumpForce = 5.0f;
+    [SerializeField] private float jumpForce = 50.0f;
 
     private XROrigin _xrRig;
     private Rigidbody _playerRb;
@@ -22,19 +22,19 @@ public class PlayerController : MonoBehaviour
         _xrRig = GetComponent<XROrigin>();
  
         _playerRb = GetComponent<Rigidbody>();
-        jumpActionReference.action.performed += OnJump;
+        
     }
 
     private void FixedUpdate()
     {
         var center = _xrRig.CameraInOriginSpacePos;
-
+        jumpActionReference.action.performed += OnJump;
     }
 
     void OnJump(InputAction.CallbackContext obj)
     {
         if (!IsGrounded) return;
-        _playerRb.AddForce(Vector3.up * jumpForce);
+        _playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
 }

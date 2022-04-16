@@ -3394,9 +3394,10 @@ GameObject:
   m_Component:
   - component: {fileID: 584578987}
   - component: {fileID: 584578986}
+  - component: {fileID: 584578988}
+  - component: {fileID: 584578983}
   - component: {fileID: 584578985}
   - component: {fileID: 584578984}
-  - component: {fileID: 584578988}
   m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
@@ -3404,6 +3405,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &584578983
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584578982}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1402734773}
 --- !u!33 &584578984
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -6067,7 +6082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904236428}
   m_LocalRotation: {x: -0, y: 0.5832084, z: -0, w: -0.8123226}
-  m_LocalPosition: {x: 37.298, y: 3.303, z: -161.565}
+  m_LocalPosition: {x: 37.376, y: 2.758, z: -161.335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10051,6 +10066,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 355f0f3f8c2463f4d8bed401784f063f, type: 3}
+--- !u!64 &1322422264 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 9093080198819270017, guid: 2e20a9d5d499bdb47989d3e52387e91b, type: 3}
+  m_PrefabInstance: {fileID: 1822063250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1402734773
 Mesh:
   m_ObjectHideFlags: 0
@@ -11759,7 +11779,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 373043490754465146, guid: 2e20a9d5d499bdb47989d3e52387e91b, type: 3}
+      propertyPath: m_Colliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 1322422264}
+    m_RemovedComponents:
+    - {fileID: 1450818314196588302, guid: 2e20a9d5d499bdb47989d3e52387e91b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e20a9d5d499bdb47989d3e52387e91b, type: 3}
 --- !u!4 &1822063251 stripped
 Transform:
