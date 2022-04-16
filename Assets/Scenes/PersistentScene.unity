@@ -514,6 +514,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &426070752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8776084046418457465, guid: cc04977b8ce6d7049a2764fb376c38e4, type: 3}
+  m_PrefabInstance: {fileID: 4225302796266041210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &426070755
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426070752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.17
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &486083480
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,11 +834,11 @@ GameObject:
   - component: {fileID: 788973768}
   - component: {fileID: 788973767}
   - component: {fileID: 788973764}
+  - component: {fileID: 788973762}
+  - component: {fileID: 788973761}
   - component: {fileID: 788973769}
   - component: {fileID: 788973763}
   - component: {fileID: 788973765}
-  - component: {fileID: 788973762}
-  - component: {fileID: 788973761}
   m_Layer: 0
   m_Name: XR OriginPersist
   m_TagString: XRRig
@@ -1001,6 +1019,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XROrigin: {fileID: 788973767}
+--- !u!1 &849164540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2932849776291776160, guid: 99903ada13a3370448a799dafc67c346, type: 3}
+  m_PrefabInstance: {fileID: 5931134045095031996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &849164542
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849164540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.17
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1087700574
 GameObject:
   m_ObjectHideFlags: 0
