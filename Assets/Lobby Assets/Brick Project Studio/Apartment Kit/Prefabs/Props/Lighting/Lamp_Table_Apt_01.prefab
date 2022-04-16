@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 6124730947378653682}
   - component: {fileID: 8716701431950636395}
   - component: {fileID: 3951041620262619714}
-  - component: {fileID: 3616493069824431458}
-  m_Layer: 0
+  - component: {fileID: 8158749018669607147}
+  m_Layer: 6
   m_Name: Lamp_Table_Apt_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6124730947378653682
 Transform:
@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117895243694500892}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7561, y: 1.7561, z: 1.7561}
   m_Children:
   - {fileID: 5018039201977482232}
   - {fileID: 4565322978899200533}
@@ -86,8 +86,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3616493069824431458
-BoxCollider:
+--- !u!64 &8158749018669607147
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,9 +96,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.21245065, y: 0.558315, z: 0.21245068}
-  m_Center: {x: 0, y: 0.2791575, z: -0.000000022351742}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3216491647305130238, guid: e501afb3ed5c60243ac1515b7ca1e2be, type: 3}
 --- !u!1 &481405169795443332
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,12 +111,12 @@ GameObject:
   - component: {fileID: 4565322978899200533}
   - component: {fileID: 3513925596660347753}
   - component: {fileID: 3195528675751732376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bulb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4565322978899200533
 Transform:
@@ -191,12 +192,12 @@ GameObject:
   - component: {fileID: 5018039201977482232}
   - component: {fileID: 1882154387755185956}
   - component: {fileID: 627043599659368702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5018039201977482232
 Transform:
@@ -272,12 +273,12 @@ GameObject:
   - component: {fileID: 2926795429457191024}
   - component: {fileID: 3563349207827542457}
   - component: {fileID: 5063694511524832986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2926795429457191024
 Transform:
@@ -353,12 +354,12 @@ GameObject:
   - component: {fileID: 284840798224419115}
   - component: {fileID: 7211367489142207870}
   - component: {fileID: 6464671002038550500}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bulb base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &284840798224419115
 Transform:

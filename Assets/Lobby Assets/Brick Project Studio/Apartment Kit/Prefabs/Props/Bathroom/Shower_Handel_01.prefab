@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 1787038266450248739}
   - component: {fileID: 6543412781371592306}
   - component: {fileID: 417335433974673834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shower_Handel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9105235693961311738
 Transform:
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417335433974673845}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.3069363, y: 1.8824091, z: -1.5864607}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -107,12 +107,12 @@ GameObject:
   - component: {fileID: 107883164146722333}
   - component: {fileID: 5621034657013658301}
   - component: {fileID: 2433236203322141848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &107883164146722333
 Transform:

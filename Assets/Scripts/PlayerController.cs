@@ -1,59 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] private InputActionReference jumpActionReference;
     [SerializeField] private float jumpForce = 5.0f;
 
-    private CharacterController _characterController;
-    private Vector3 _playerVelocity;
-    private bool _groundedPlayer;
-    private bool _jumpPressed = false;
-    private float _gravityValue = -9.81f;
-   
+    private XROrigin _xrRig;
+    private Rigidbody _playerRb;
 
-    // Start is called before the first frame update
-    void Start()
+    private bool IsGrounded => Physics.Raycast(new Vector2(transform.position.x, transform.position.y + 2.0f), Vector3.down, 2.0f);
+
+    private void Start()
     {
-        _characterController = GetComponent<CharacterController>();
+        _xrRig = GetComponent<XROrigin>();
+ 
+        _playerRb = GetComponent<Rigidbody>();
+        jumpActionReference.action.performed += OnJump;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        MovementJump();
+        var center = _xrRig.CameraInOriginSpacePos;
+
     }
 
-    private void MovementJump()
+    void OnJump(InputAction.CallbackContext obj)
     {
-        _groundedPlayer = _characterController.isGrounded;
-
-        //if on ground, stop verical movement
-        if(_groundedPlayer)
-        {
-            _playerVelocity.y = 0.0f;
-        }
-
-        
-        //if jump pressed and on ground, jump
-        if(_jumpPressed && _groundedPlayer)
-        {
-            _playerVelocity.y += Mathf.Sqrt(jumpForce * -1.0f * _gravityValue);
-            _jumpPressed = false;
-        }
-
-        _playerVelocity.y += _gravityValue * Time.deltaTime;
-        _characterController.Move(_playerVelocity * Time.deltaTime);
+        if (!IsGrounded) return;
+        _playerRb.AddForce(Vector3.up * jumpForce);
     }
 
-    private void OnJump(InputAction.CallbackContext obj)
-    {
-
-      
-    }
 }

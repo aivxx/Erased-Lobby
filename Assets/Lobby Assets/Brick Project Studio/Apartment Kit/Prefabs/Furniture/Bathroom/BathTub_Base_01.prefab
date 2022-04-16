@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 8491856453150602090}
   - component: {fileID: 8969302608968954616}
   - component: {fileID: 609126468041172476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GlassWall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3209985534107503491
 Transform:
@@ -107,12 +107,12 @@ GameObject:
   - component: {fileID: 6611176152109816902}
   - component: {fileID: 3441229937547172273}
   - component: {fileID: 703964251201245475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GlassWall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9123529967632243323
 Transform:
@@ -201,13 +201,13 @@ GameObject:
   - component: {fileID: 9160075805504388056}
   - component: {fileID: 3745576625610789257}
   - component: {fileID: 2742047375368240822}
-  - component: {fileID: 2805616125457797557}
-  m_Layer: 0
+  - component: {fileID: 8628159990197864575}
+  m_Layer: 6
   m_Name: BathTub_Base_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9160075805504388056
 Transform:
@@ -218,7 +218,7 @@ Transform:
   m_GameObject: {fileID: 2805616125457797558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.379408, z: 1.1282681}
   m_Children:
   - {fileID: 3991406167233984337}
   - {fileID: 6809806112944075676}
@@ -274,7 +274,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2805616125457797557
+--- !u!64 &8628159990197864575
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,12 +299,12 @@ GameObject:
   - component: {fileID: 3991406167233984337}
   - component: {fileID: 5718110396820137911}
   - component: {fileID: 8201054020281671428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BathTub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3991406167233984337
 Transform:
@@ -380,12 +380,12 @@ GameObject:
   - component: {fileID: 6600612497418600821}
   - component: {fileID: 6931771785623678655}
   - component: {fileID: 1596221635594092712}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GlassDoorHandel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6600612497418600821
 Transform:
@@ -464,12 +464,12 @@ GameObject:
   - component: {fileID: 6976062566496198566}
   - component: {fileID: 6976062566496198567}
   - component: {fileID: 6976062566496198565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GlassDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8763845279505977736
 Transform:
@@ -593,12 +593,12 @@ GameObject:
   - component: {fileID: 6809806112944075676}
   - component: {fileID: 346138575928656529}
   - component: {fileID: 8171280172158332004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShowerDoorBase_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6809806112944075676
 Transform:

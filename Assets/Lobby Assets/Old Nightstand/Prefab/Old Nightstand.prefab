@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4564362898724592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Old Nightstand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4564362898724592
 Transform:
@@ -23,9 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316309115743696}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1112075, y: 2.111208, z: 2.1112075}
   m_Children:
   - {fileID: 4245051829195286}
   - {fileID: 4642504937650696}
@@ -44,12 +44,13 @@ GameObject:
   - component: {fileID: 4372533932169772}
   - component: {fileID: 33467253036378910}
   - component: {fileID: 23200772995526898}
-  m_Layer: 0
+  - component: {fileID: 1306633913}
+  m_Layer: 6
   m_Name: NightstandDetail03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4372533932169772
 Transform:
@@ -114,6 +115,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1306633913
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479463707231070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: ddee3622447dd1d4895427cfb5b4ed58, type: 3}
 --- !u!1 &1773447340755094
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,12 +140,13 @@ GameObject:
   - component: {fileID: 4642504937650696}
   - component: {fileID: 33222842157831950}
   - component: {fileID: 23600948592217320}
-  m_Layer: 0
+  - component: {fileID: 793367382}
+  m_Layer: 6
   m_Name: NightstandDetail02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4642504937650696
 Transform:
@@ -195,6 +211,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &793367382
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773447340755094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: ddee3622447dd1d4895427cfb5b4ed58, type: 3}
 --- !u!1 &1988655569859010
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,12 +236,13 @@ GameObject:
   - component: {fileID: 4245051829195286}
   - component: {fileID: 33542960678011574}
   - component: {fileID: 23375536923031976}
-  m_Layer: 0
+  - component: {fileID: 1985704378}
+  m_Layer: 6
   m_Name: NightstandDetail01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4245051829195286
 Transform:
@@ -276,3 +307,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1985704378
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988655569859010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: ddee3622447dd1d4895427cfb5b4ed58, type: 3}

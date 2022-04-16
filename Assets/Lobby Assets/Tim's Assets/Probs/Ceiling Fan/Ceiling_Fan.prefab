@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4357263445673764}
   - component: {fileID: 33439180372604884}
   - component: {fileID: 23539607026516012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vent_Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4357263445673764
 Transform:
@@ -92,12 +92,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4191399638858398}
   - component: {fileID: 95057239290561438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ceiling_Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4191399638858398
 Transform:
@@ -108,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 1675682141089508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5.2743, y: 5.2743, z: 5.2743}
   m_Children:
   - {fileID: 4357263445673764}
   m_Father: {fileID: 0}
@@ -145,12 +145,12 @@ GameObject:
   - component: {fileID: 33097450821682658}
   - component: {fileID: 23815094798033762}
   - component: {fileID: 114499801576944742}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vent_Blades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4814237051589016
 Transform:
