@@ -17,7 +17,7 @@ public static class SceneUtils
     {
         public static readonly string PersistentScene = "PersistentScene";
         public static readonly string TVLevel = "TVLevel";
-        public static readonly string Lobby = "SampleScene 1";
+        public static readonly string Lobby = "Lobby";
     }
 
     public static void AlignXRRig(Scene persistentScene, Scene currentScene)

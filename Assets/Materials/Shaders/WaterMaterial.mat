@@ -43,7 +43,7 @@ Material:
     - _Depth: 1
     - _NormalStrength: 1
     - _Smoothness: 1
-    - _Strength: 0.166
+    - _Strength: 0.135
     m_Colors:
     - _DeepWaterColor: {r: 0.1140085, g: 0.3962264, b: 0.2796933, a: 0}
     - _ShadowWaterColor: {r: 0.2566305, g: 0.6886792, b: 0.4449455, a: 0}
