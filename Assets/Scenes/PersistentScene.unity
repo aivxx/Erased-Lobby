@@ -275,7 +275,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 4294967295
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 4225302796266041211}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
@@ -304,7 +304,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
-  m_AllowHoveredActivate: 0
+  m_AllowHoveredActivate: 1
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
@@ -584,7 +584,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 4294967295
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 5931134045095031998}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
@@ -613,7 +613,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
-  m_AllowHoveredActivate: 0
+  m_AllowHoveredActivate: 1
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
@@ -1153,6 +1153,7 @@ GameObject:
   - component: {fileID: 1236848704}
   - component: {fileID: 1236848703}
   - component: {fileID: 1236848702}
+  - component: {fileID: 1236848706}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1330,6 +1331,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!135 &1236848706
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236848700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1625905324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8433975606178898631, guid: cc04977b8ce6d7049a2764fb376c38e4, type: 3}
@@ -1438,6 +1452,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8433975604450671242, guid: cc04977b8ce6d7049a2764fb376c38e4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cc04977b8ce6d7049a2764fb376c38e4, type: 3}
+--- !u!4 &4225302796266041211 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8433975605396429835, guid: cc04977b8ce6d7049a2764fb376c38e4, type: 3}
+  m_PrefabInstance: {fileID: 4225302796266041210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5931134045095031996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1507,5 +1526,10 @@ PrefabInstance:
 --- !u!4 &5931134045095031997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7528628029395244802, guid: 99903ada13a3370448a799dafc67c346, type: 3}
+  m_PrefabInstance: {fileID: 5931134045095031996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5931134045095031998 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6963693667099507515, guid: 99903ada13a3370448a799dafc67c346, type: 3}
   m_PrefabInstance: {fileID: 5931134045095031996}
   m_PrefabAsset: {fileID: 0}
