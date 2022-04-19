@@ -228,8 +228,8 @@ GameObject:
   m_Component:
   - component: {fileID: 349108891}
   - component: {fileID: 349108893}
-  - component: {fileID: 349108892}
   - component: {fileID: 349108894}
+  - component: {fileID: 349108892}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -270,7 +270,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 4294967295
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 1828103291}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
@@ -299,7 +299,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
-  m_AllowHoveredActivate: 1
+  m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
@@ -509,6 +509,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &415975024 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 589323316892308144, guid: 39e99fb7225373040b035ff51451ece7, type: 3}
+  m_PrefabInstance: {fileID: 6605003038688701039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &486083480
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +566,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 4294967295
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 415975024}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
@@ -821,7 +826,7 @@ GameObject:
   - component: {fileID: 788973765}
   - component: {fileID: 788973762}
   - component: {fileID: 788973761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: XR OriginPersist
   m_TagString: XRRig
   m_Icon: {fileID: 0}
@@ -1332,6 +1337,11 @@ Transform:
   m_Father: {fileID: 788973768}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1828103291 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1640327237362848882, guid: 8f0a494c190199e44a1228881ec3c1e5, type: 3}
+  m_PrefabInstance: {fileID: 2478561595342562479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2478561595342562479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1346,7 +1356,7 @@ PrefabInstance:
     - target: {fileID: 1640327235755987134, guid: 8f0a494c190199e44a1228881ec3c1e5, type: 3}
       propertyPath: interactor
       value: 
-      objectReference: {fileID: 349108892}
+      objectReference: {fileID: 0}
     - target: {fileID: 1640327235755987135, guid: 8f0a494c190199e44a1228881ec3c1e5, type: 3}
       propertyPath: m_RootOrder
       value: 0
