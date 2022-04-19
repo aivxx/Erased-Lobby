@@ -63,7 +63,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightPoseableHand
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7835574254886515169, guid: 1be27b61c71046a42bca6d837232c417, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1be27b61c71046a42bca6d837232c417, type: 3}
 --- !u!1 &8433975604847417537 stripped
 GameObject:
