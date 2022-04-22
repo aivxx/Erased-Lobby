@@ -187,13 +187,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 670922481}
     m_Modifications:
-    - target: {fileID: 17314799, guid: a7dbdd508737b0d49b444c4263d812f1, type: 3}
-      propertyPath: m_AttachTransform
-      value: 
+    - target: {fileID: 3317150538688662236, guid: a7dbdd508737b0d49b444c4263d812f1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 17314799, guid: a7dbdd508737b0d49b444c4263d812f1, type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 24
+    - target: {fileID: 8740333336922633223, guid: a7dbdd508737b0d49b444c4263d812f1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9159537069380060400, guid: a7dbdd508737b0d49b444c4263d812f1, type: 3}
       propertyPath: m_RootOrder
@@ -243,8 +243,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Radio
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 17314801, guid: a7dbdd508737b0d49b444c4263d812f1, type: 3}
+    - target: {fileID: 9159537069380098256, guid: a7dbdd508737b0d49b444c4263d812f1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7dbdd508737b0d49b444c4263d812f1, type: 3}
 --- !u!1 &17314798 stripped
 GameObject:
@@ -260,13 +263,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 17314798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991c69b8a1b6a444a9177914f77cf7d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 57066bbf8b4b42748b913600a8054f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TintColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  m_TintOnHover: 1
-  m_TintOnSelection: 1
-  m_TintRenderers: []
+  hoverMaterial: {fileID: 2100000, guid: 9c9de7dfb037ede4ea827454686abafa, type: 2}
 --- !u!4 &31967123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9105235693961311738, guid: 2c53d7677acbaf34b81c7da75f0544ff, type: 3}

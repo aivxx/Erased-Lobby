@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 17314802}
   - component: {fileID: 17314800}
   - component: {fileID: 17314799}
-  - component: {fileID: 17314801}
+  - component: {fileID: 7366372447365009163}
   m_Layer: 0
   m_Name: Radio
   m_TagString: Untagged
@@ -194,7 +194,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 24
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 2973186009834465705}
+  m_AttachTransform: {fileID: 0}
   m_AttachEaseInTime: 0.15
   m_MovementType: 2
   m_VelocityDamping: 1
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &17314801
+--- !u!114 &7366372447365009163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,10 +300,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9159537069380098256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d960477f005db234bab5c2038837f9fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 991c69b8a1b6a444a9177914f77cf7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideHand: 1
-  leftHandPose: {fileID: 11400000, guid: f9722cb0167d08846bae197dba44fa46, type: 2}
-  rightHandPose: {fileID: 11400000, guid: 351dd56085132c24e9a2b8522acec86e, type: 2}
-  fixedAttachment: {fileID: 2973186009834465705}
+  m_TintColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  m_TintOnHover: 1
+  m_TintOnSelection: 1
+  m_TintRenderers: []
