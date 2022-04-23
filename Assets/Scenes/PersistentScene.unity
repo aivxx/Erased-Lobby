@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 232134679}
   - component: {fileID: 232134678}
+  - component: {fileID: 232134680}
   m_Layer: 0
   m_Name: XR Interaction Manager
   m_TagString: Untagged
@@ -166,6 +167,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &232134680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232134677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ActionAssets:
+  - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1001 &282858394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1109,12 +1124,12 @@ GameObject:
   m_Component:
   - component: {fileID: 788973768}
   - component: {fileID: 788973767}
-  - component: {fileID: 788973764}
   - component: {fileID: 788973769}
   - component: {fileID: 788973763}
   - component: {fileID: 788973765}
   - component: {fileID: 788973762}
   - component: {fileID: 788973761}
+  - component: {fileID: 788973764}
   m_Layer: 8
   m_Name: XR OriginPersist
   m_TagString: XRRig
@@ -1149,7 +1164,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1.5
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &788973763
@@ -1203,11 +1218,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 788973760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
+  m_Script: {fileID: 11500000, guid: c48d0bc6189034b45bfac9807a05c083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ActionAssets:
-  - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  swimForce: 2
+  dragForce: 1
+  minForce: 0
+  minTimeBetweenStrokes: 0
+  leftControllerSwimReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftControllerVelocity: {fileID: 3163464644607871417, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightControllerSwimReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightControllerVelocity: {fileID: -7111199557353895297, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  trackingReference: {fileID: 788973768}
 --- !u!114 &788973765
 MonoBehaviour:
   m_ObjectHideFlags: 0

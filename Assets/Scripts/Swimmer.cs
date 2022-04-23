@@ -14,7 +14,7 @@ public class Swimmer : MonoBehaviour
 
     [Header("References")]
     [SerializeField] InputActionReference leftControllerSwimReference;
-    [SerializeField] InputActionReference leftControllerVelocity;  
+    [SerializeField] InputActionReference leftControllerVelocity;
     [SerializeField] InputActionReference rightControllerSwimReference;
     [SerializeField] InputActionReference rightControllerVelocity;
     [SerializeField] Transform trackingReference;
@@ -25,43 +25,62 @@ public class Swimmer : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _rigidbody.useGravity = false;
         _rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 
     }
 
     private void FixedUpdate()
     {
+
+
+
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
         _cooldownTimer += Time.fixedDeltaTime;
-
-        //add velocity when both controllers pressed
-        if (_cooldownTimer > minTimeBetweenStrokes
-            && leftControllerSwimReference.action.IsPressed()
-            && rightControllerSwimReference.action.IsPressed())
+        if (other.CompareTag("Water"))
         {
-            var leftHandVelocity = leftControllerVelocity.action.ReadValue<Vector3>();
-            var rightHandVelocity = rightControllerVelocity.action.ReadValue<Vector3>();
-            Vector3 localVelocity = leftHandVelocity + rightHandVelocity;
-            localVelocity *= -1;
-
-            //swim forward
-            if(localVelocity.sqrMagnitude > minForce * minForce)
+            _rigidbody.useGravity = false;
+            //add velocity when both controllers pressed
+            if (_cooldownTimer > minTimeBetweenStrokes
+                && leftControllerSwimReference.action.IsPressed()
+                && rightControllerSwimReference.action.IsPressed())
             {
-                Vector3 worldVelocity = trackingReference.TransformDirection(localVelocity);
-                _rigidbody.AddForce(worldVelocity * swimForce, ForceMode.Acceleration);
-                _cooldownTimer = 0f;
-            }
+                var leftHandVelocity = leftControllerVelocity.action.ReadValue<Vector3>();
+                var rightHandVelocity = rightControllerVelocity.action.ReadValue<Vector3>();
+                Vector3 localVelocity = leftHandVelocity + rightHandVelocity;
+                localVelocity *= -1;
+
+                //swim forward
+                if (localVelocity.sqrMagnitude > minForce * minForce)
+                {
+                    Vector3 worldVelocity = trackingReference.TransformDirection(localVelocity);
+                    _rigidbody.AddForce(worldVelocity * swimForce, ForceMode.Acceleration);
+                    _cooldownTimer = 0f;
+                }
 
             }
 
-        //apply water drag force when player is moving
-        if (_rigidbody.velocity.sqrMagnitude > 0.01f)
-        {
-            _rigidbody.AddForce(-_rigidbody.velocity * dragForce, ForceMode.Acceleration);
+            //apply water drag force when player is moving
+            if (_rigidbody.velocity.sqrMagnitude > 0.01f)
+            {
+                _rigidbody.AddForce(-_rigidbody.velocity * dragForce, ForceMode.Acceleration);
+            }
         }
     }
 
 
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            _rigidbody.useGravity = true;
+        }
+
+    }
 
 
 }
