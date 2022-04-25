@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class Swimmer : MonoBehaviour
 
     Rigidbody _rigidbody;
     float _cooldownTimer;
+    
 
     private void Awake()
     {
@@ -32,16 +34,19 @@ public class Swimmer : MonoBehaviour
     private void FixedUpdate()
     {
 
+            
+    
+       
 
 
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionStay(Collision collision)
     {
-        _cooldownTimer += Time.fixedDeltaTime;
-        if (other.CompareTag("Water"))
+          if (collision.gameObject.tag == "Water")
         {
+            Debug.Log("Collision Enter");
+            _cooldownTimer += Time.fixedDeltaTime;
             _rigidbody.useGravity = false;
             //add velocity when both controllers pressed
             if (_cooldownTimer > minTimeBetweenStrokes
@@ -68,18 +73,18 @@ public class Swimmer : MonoBehaviour
             {
                 _rigidbody.AddForce(-_rigidbody.velocity * dragForce, ForceMode.Acceleration);
             }
+           
         }
     }
 
 
-
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision collision)
     {
-        if (other.CompareTag("Water"))
+        if (collision.gameObject.name == "Water")
         {
             _rigidbody.useGravity = true;
-        }
 
+        }
     }
 
 

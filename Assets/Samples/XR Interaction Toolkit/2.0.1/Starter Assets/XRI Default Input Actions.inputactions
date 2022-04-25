@@ -216,7 +216,7 @@
                     "path": "<XRController>{LeftHand}/deviceVelocity",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Continuous Move",
+                    "groups": "",
                     "action": "Velocity",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -754,7 +754,7 @@
                     "path": "<XRController>{RightHand}/deviceVelocity",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Continuous Move",
+                    "groups": "Generic XR Controller",
                     "action": "Velocity",
                     "isComposite": false,
                     "isPartOfComposite": false
