@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 232134679}
   - component: {fileID: 232134678}
-  - component: {fileID: 232134680}
   m_Layer: 0
   m_Name: XR Interaction Manager
   m_TagString: Untagged
@@ -167,20 +166,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &232134680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232134677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ActionAssets:
-  - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1001 &282858394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -583,9 +568,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 24
+    m_Bits: 4294967295
   m_AttachTransform: {fileID: 282858396}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
@@ -612,7 +597,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_SelectActionTrigger: 0
-  m_HideControllerOnSelect: 0
+  m_HideControllerOnSelect: 1
   m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
@@ -876,7 +861,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 1664412402}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
@@ -903,7 +888,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_SelectActionTrigger: 0
-  m_HideControllerOnSelect: 0
+  m_HideControllerOnSelect: 1
   m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
@@ -1112,7 +1097,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &788973760
 GameObject:
@@ -1124,6 +1109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 788973768}
   - component: {fileID: 788973767}
+  - component: {fileID: 788973766}
   - component: {fileID: 788973769}
   - component: {fileID: 788973763}
   - component: {fileID: 788973765}
@@ -1223,11 +1209,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swimForce: 2
   dragForce: 1
-  minForce: 0
+  minForce: 1.1
   minTimeBetweenStrokes: 0
-  leftControllerSwimReference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftControllerSwimReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   leftControllerVelocity: {fileID: 3163464644607871417, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rightControllerSwimReference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightControllerSwimReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rightControllerVelocity: {fileID: -7111199557353895297, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   trackingDReference: {fileID: 788973768}
 --- !u!114 &788973765
@@ -1271,6 +1257,20 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &788973766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788973760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ActionAssets:
+  - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &788973767
 MonoBehaviour:
   m_ObjectHideFlags: 0

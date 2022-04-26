@@ -64,30 +64,14 @@ public class Swimmer : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "Water")
-        {
-            _swimEnabled = true;
-            _rigidBody.useGravity = false;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.name == "Water")
-        {
-            _swimEnabled = false;
-            _rigidBody.useGravity = true;
-
-        }
-    }
+ 
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Water"))
         {
-            
+            _swimEnabled = true;
+            _rigidBody.useGravity = false;
         }
     }
 
@@ -95,7 +79,8 @@ public class Swimmer : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
-           
+             _swimEnabled = false;
+            _rigidBody.useGravity = true;
         }
     }
 }
