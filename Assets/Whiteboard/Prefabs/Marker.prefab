@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5216141211590169844}
   - component: {fileID: 5216141211590169842}
   - component: {fileID: 5216141211590169843}
-  - component: {fileID: 762552318}
+  - component: {fileID: 5966163242235980363}
   m_Layer: 6
   m_Name: Marker
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &762552318
+--- !u!114 &5966163242235980363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -398,7 +398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5216141212557772234}
   m_LocalRotation: {x: -0.7071065, y: -0, z: -0, w: 0.7071072}
-  m_LocalPosition: {x: 0, y: 0.087, z: 0}
+  m_LocalPosition: {x: -0, y: 0.042, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5216141211590169845}

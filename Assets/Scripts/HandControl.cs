@@ -11,7 +11,7 @@ public class HandControl : MonoBehaviour
         handroot.position = interactableAttach.position + (handroot.position - handGrabAttach.position);
     }
 
-    public bool hideHand = false;
+    public bool hideHand = true;
     public HandPose leftHandPose = null;
     public HandPose rightHandPose = null;
     public Transform fixedAttachment;
