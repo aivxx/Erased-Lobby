@@ -23,7 +23,10 @@ public class Consumable : MonoBehaviour
         SetVisuals();
     }
 
-    [ContextMenu("Consume")]
+    private void OnValidate()
+    {
+        SetVisuals();
+    }
 
     public void Consume()
     {
