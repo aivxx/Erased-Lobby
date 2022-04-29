@@ -18,12 +18,18 @@ public class WhiteboardMarker : MonoBehaviour
     private Vector2 _touchPos, _lastTouchPos;
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
-    
+
+
+
+
     void Start()
     {
+        
+        
         _renderer = _tip.GetComponent<Renderer>();
         _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
         _tipHeight = _tip.localScale.y;
+        
     }
 
     void Update()
@@ -34,13 +40,16 @@ public class WhiteboardMarker : MonoBehaviour
     private void Draw()
     {
         if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight))
-        {
+        {   
+            
             if (_touch.transform.CompareTag("Whiteboard"))
             {
                 if (_whiteboard == null)
                 {
                     _whiteboard = _touch.transform.GetComponent<Whiteboard>();
                 }
+
+                
 
                 _touchPos = new Vector2(_touch.textureCoord.x, _touch.textureCoord.y);
 
@@ -70,9 +79,13 @@ public class WhiteboardMarker : MonoBehaviour
                 _touchedLastFrame = true;
                 return;
             }
+            
+            
         }
 
         _whiteboard = null;
         _touchedLastFrame = false;
+       
+        
     }
 }
