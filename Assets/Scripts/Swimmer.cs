@@ -29,7 +29,7 @@ public class Swimmer : MonoBehaviour
     void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
-       
+
         _rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
@@ -64,7 +64,7 @@ public class Swimmer : MonoBehaviour
 
     }
 
- 
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -79,7 +79,7 @@ public class Swimmer : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
-             _swimEnabled = false;
+            _swimEnabled = false;
             _rigidBody.useGravity = true;
         }
     }
