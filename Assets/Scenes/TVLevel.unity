@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1585382}
   - component: {fileID: 1585381}
   - component: {fileID: 1585385}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Water
   m_TagString: Water
   m_Icon: {fileID: 0}
