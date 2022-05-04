@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class FogOnTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public LightingSettings Water;
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.CompareTag("Water"))
+        {
+            Water = enabled;
+        }
     }
 }
