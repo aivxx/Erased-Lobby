@@ -5,10 +5,23 @@ using UnityEngine;
 public class FogOnTrigger : MonoBehaviour
 {
 
-    public LightingSettings Water;
+    [SerializeField] float fogDensity = 0.01f;
+    private bool isSwimming = false;
 
     private void Start()
     {
+        RenderSettings.fog = true;
+        RenderSettings.fogColor = Color.green;
+            
+    }
+
+    private void Update()
+    {
+        
+        if(isSwimming == true)
+        {
+            RenderSettings.fogDensity = fogDensity;
+        }
         
     }
 
@@ -16,7 +29,18 @@ public class FogOnTrigger : MonoBehaviour
     {
         if(other.CompareTag("Water"))
         {
-            Water = enabled;
+            isSwimming = true;
+            fogDensity = 0.3f;
+            
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Water"))
+        {
+            isSwimming = false;
+            fogDensity = 0.01f;
         }
     }
 }

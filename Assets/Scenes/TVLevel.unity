@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6127352, g: 0.47194934, b: 0.32091436, a: 1}
+  m_IndirectSpecularColor: {r: 0.3640604, g: 0.41722903, b: 0.4830203, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,10 +152,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 121.2, y: -31.2, z: -107.9}
   m_LocalScale: {x: 8.639261, y: 1, z: 9.426671}
-  m_Children:
-  - {fileID: 835376617}
+  m_Children: []
   m_Father: {fileID: 1703481229}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1585381
 MeshRenderer:
@@ -176,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0725843bbf67cda4e8de9013aa6e653f, type: 2}
+  - {fileID: 2100000, guid: 38053df4b1c5dcf4e9e854cfc625b74a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -250,7 +249,7 @@ Transform:
   m_LocalScale: {x: 6.907428, y: 1, z: 9.426671}
   m_Children: []
   m_Father: {fileID: 1703481229}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &117999885
 MeshRenderer:
@@ -271,7 +270,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0725843bbf67cda4e8de9013aa6e653f, type: 2}
+  - {fileID: 2100000, guid: 38053df4b1c5dcf4e9e854cfc625b74a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -464,6 +463,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bcb58554a8c3844daff1cb4024489dc, type: 3}
+--- !u!1 &376916906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 376916907}
+  - component: {fileID: 376916908}
+  m_Layer: 12
+  m_Name: FishSpawnArea (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &376916907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376916906}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.05, y: 2.98, z: -3.91}
+  m_LocalScale: {x: 8.639261, y: 1, z: 9.426671}
+  m_Children: []
+  m_Father: {fileID: 441660436}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &376916908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376916906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ee7704c3cef40498551a4d186f7544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 835376619}
+  fishPrefab: {fileID: 1678932127224166, guid: 05ff832e499ae964f8d9c171617cc570, type: 3}
+  goal1: {x: 0, y: 0, z: 0}
+  goal2: {x: 0, y: 0, z: 0}
+  goalActual: {x: 0, y: 0, z: 0}
+  waterLevel: 1
+  swimLimits: {x: 5, y: 5, z: 5}
+  numFish: 4
+  allFish: []
+  minSpeed: 0.21
+  maxSpeed: 1.15
 --- !u!1 &384358845
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +610,97 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 1
   m_ShadowAngle: 0
+--- !u!1 &395807218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 395807219}
+  - component: {fileID: 395807220}
+  m_Layer: 12
+  m_Name: FishSpawnArea (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &395807219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395807218}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 29.9, y: 2.65, z: -30.4}
+  m_LocalScale: {x: 8.639261, y: 1, z: 9.426671}
+  m_Children: []
+  m_Father: {fileID: 441660436}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &395807220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395807218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ee7704c3cef40498551a4d186f7544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 835376619}
+  fishPrefab: {fileID: 1960118843247954, guid: 0ca4bcd9d5c31414db0f63eeca513a1a, type: 3}
+  goal1: {x: 0, y: 0, z: 0}
+  goal2: {x: 0, y: 0, z: 0}
+  goalActual: {x: 0, y: 0, z: 0}
+  waterLevel: 1
+  swimLimits: {x: 5, y: 5, z: 5}
+  numFish: 4
+  allFish: []
+  minSpeed: 0.16
+  maxSpeed: 0.86
+--- !u!1 &441660435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 441660436}
+  m_Layer: 0
+  m_Name: FishSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &441660436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441660435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 141.40463, y: -1.5442877, z: 78.66224}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1783365597}
+  - {fileID: 376916907}
+  - {fileID: 395807219}
+  - {fileID: 1877743264}
+  - {fileID: 1077208082}
+  - {fileID: 2144857849}
+  - {fileID: 1347934593}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &524670745
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,10 +973,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835376616}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.15, y: -2.3, z: -5.23}
-  m_LocalScale: {x: 0.11575064, y: 1, z: 0.106081985}
+  m_LocalPosition: {x: -35.602585, y: -33.5, z: -157.20149}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1585379}
+  m_Father: {fileID: 1703481229}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &835376618
@@ -972,6 +1116,60 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1077208081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1077208082}
+  - component: {fileID: 1077208083}
+  m_Layer: 0
+  m_Name: FishSpawnArea (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1077208082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077208081}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -104.76, y: 2.88, z: 7.6}
+  m_LocalScale: {x: 6.907428, y: 1, z: 9.426671}
+  m_Children: []
+  m_Father: {fileID: 441660436}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1077208083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077208081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ee7704c3cef40498551a4d186f7544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 835376619}
+  fishPrefab: {fileID: 1349788013647998, guid: f53da9b9649e28141a15b6baf1df0115, type: 3}
+  goal1: {x: 0, y: 0, z: 0}
+  goal2: {x: 0, y: 0, z: 0}
+  goalActual: {x: 0, y: 0, z: 0}
+  waterLevel: 1
+  swimLimits: {x: 5, y: 5, z: 5}
+  numFish: 4
+  allFish: []
+  minSpeed: 0.27
+  maxSpeed: 1.52
 --- !u!1001 &1079832572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1178,6 +1376,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d0d3252571eb9468266301b65df7d2, type: 3}
+--- !u!1 &1347934592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347934593}
+  - component: {fileID: 1347934594}
+  m_Layer: 0
+  m_Name: FishSpawnArea (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1347934593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347934592}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -98.03166, y: 5.1758947, z: 85.85}
+  m_LocalScale: {x: 6.430401, y: 1, z: 6.365759}
+  m_Children: []
+  m_Father: {fileID: 441660436}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1347934594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347934592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ee7704c3cef40498551a4d186f7544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 835376619}
+  fishPrefab: {fileID: 1557627011613792, guid: ce8afdb08113bbb4ba439dfb151be402, type: 3}
+  goal1: {x: 0, y: 0, z: 0}
+  goal2: {x: 0, y: 0, z: 0}
+  goalActual: {x: 0, y: 0, z: 0}
+  waterLevel: 1
+  swimLimits: {x: 5, y: 5, z: 5}
+  numFish: 4
+  allFish: []
+  minSpeed: 0.2
+  maxSpeed: 1.34
 --- !u!1 &1641412446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1537,7 @@ Transform:
   m_LocalScale: {x: 6.430401, y: 1, z: 6.365759}
   m_Children: []
   m_Father: {fileID: 1703481229}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1686014428
 BoxCollider:
@@ -1319,7 +1571,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0725843bbf67cda4e8de9013aa6e653f, type: 2}
+  - {fileID: 2100000, guid: 38053df4b1c5dcf4e9e854cfc625b74a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1376,6 +1628,7 @@ Transform:
   m_LocalPosition: {x: 38.41301, y: 33.861607, z: 154.14005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 835376617}
   - {fileID: 1686014427}
   - {fileID: 117999883}
   - {fileID: 1585379}
@@ -1439,6 +1692,114 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bcb58554a8c3844daff1cb4024489dc, type: 3}
+--- !u!1 &1783365596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783365597}
+  - component: {fileID: 1783365598}
+  m_Layer: 12
+  m_Name: FishSpawnArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1783365597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783365596}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25.07, y: 3.7, z: -19.22}
+  m_LocalScale: {x: 8.639261, y: 1, z: 9.426671}
+  m_Children: []
+  m_Father: {fileID: 441660436}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1783365598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783365596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ee7704c3cef40498551a4d186f7544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 835376619}
+  fishPrefab: {fileID: 1408432115358962, guid: 16ed38860d2ae1442a793bc8825aab09, type: 3}
+  goal1: {x: 0, y: 0, z: 0}
+  goal2: {x: 0, y: 0, z: 0}
+  goalActual: {x: 0, y: 0, z: 0}
+  waterLevel: 1
+  swimLimits: {x: 5, y: 5, z: 5}
+  numFish: 4
+  allFish: []
+  minSpeed: 0.13
+  maxSpeed: 0.75
+--- !u!1 &1877743263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877743264}
+  - component: {fileID: 1877743265}
+  m_Layer: 0
+  m_Name: FishSpawnArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1877743264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877743263}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -82.969, y: 2.88, z: 7.6}
+  m_LocalScale: {x: 6.907428, y: 1, z: 9.426671}
+  m_Children: []
+  m_Father: {fileID: 441660436}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1877743265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877743263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ee7704c3cef40498551a4d186f7544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 835376619}
+  fishPrefab: {fileID: 1062887002482736, guid: 1bf46596da280b141859ee373e48ba31, type: 3}
+  goal1: {x: 0, y: 0, z: 0}
+  goal2: {x: 0, y: 0, z: 0}
+  goalActual: {x: 0, y: 0, z: 0}
+  waterLevel: 1
+  swimLimits: {x: 5, y: 5, z: 5}
+  numFish: 4
+  allFish: []
+  minSpeed: 0.27
+  maxSpeed: 1.99
 --- !u!1 &1948834696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,3 +1892,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6795833471293109181, guid: 4c4896384163f7c428f38c4741487cdb, type: 3}
   m_PrefabInstance: {fileID: 2012918965}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2144857848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2144857849}
+  - component: {fileID: 2144857850}
+  m_Layer: 0
+  m_Name: FishSpawnArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2144857849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144857848}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -98.03166, y: 5.1758947, z: 63.025124}
+  m_LocalScale: {x: 6.430401, y: 1, z: 6.365759}
+  m_Children: []
+  m_Father: {fileID: 441660436}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2144857850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144857848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ee7704c3cef40498551a4d186f7544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 835376619}
+  fishPrefab: {fileID: 1352382412534446, guid: c7124eae6b300e849a0407251dfc0cbb, type: 3}
+  goal1: {x: 0, y: 0, z: 0}
+  goal2: {x: 0, y: 0, z: 0}
+  goalActual: {x: 0, y: 0, z: 0}
+  waterLevel: 1
+  swimLimits: {x: 5, y: 5, z: 5}
+  numFish: 4
+  allFish: []
+  minSpeed: 0.29
+  maxSpeed: 0.88
