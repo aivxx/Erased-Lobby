@@ -511,9 +511,9 @@ MonoBehaviour:
   goal1: {x: 0, y: 0, z: 0}
   goal2: {x: 0, y: 0, z: 0}
   goalActual: {x: 0, y: 0, z: 0}
-  waterLevel: 1
+  waterLevel: 4
   swimLimits: {x: 5, y: 5, z: 5}
-  numFish: 4
+  numFish: 19
   allFish: []
   minSpeed: 0.21
   maxSpeed: 1.15
@@ -658,9 +658,9 @@ MonoBehaviour:
   goal1: {x: 0, y: 0, z: 0}
   goal2: {x: 0, y: 0, z: 0}
   goalActual: {x: 0, y: 0, z: 0}
-  waterLevel: 1
+  waterLevel: 4
   swimLimits: {x: 5, y: 5, z: 5}
-  numFish: 4
+  numFish: 14
   allFish: []
   minSpeed: 0.16
   maxSpeed: 0.86
@@ -1164,9 +1164,9 @@ MonoBehaviour:
   goal1: {x: 0, y: 0, z: 0}
   goal2: {x: 0, y: 0, z: 0}
   goalActual: {x: 0, y: 0, z: 0}
-  waterLevel: 1
+  waterLevel: 4
   swimLimits: {x: 5, y: 5, z: 5}
-  numFish: 4
+  numFish: 18
   allFish: []
   minSpeed: 0.27
   maxSpeed: 1.52
@@ -1424,9 +1424,9 @@ MonoBehaviour:
   goal1: {x: 0, y: 0, z: 0}
   goal2: {x: 0, y: 0, z: 0}
   goalActual: {x: 0, y: 0, z: 0}
-  waterLevel: 1
+  waterLevel: 4
   swimLimits: {x: 5, y: 5, z: 5}
-  numFish: 4
+  numFish: 14
   allFish: []
   minSpeed: 0.2
   maxSpeed: 1.34
@@ -1740,9 +1740,9 @@ MonoBehaviour:
   goal1: {x: 0, y: 0, z: 0}
   goal2: {x: 0, y: 0, z: 0}
   goalActual: {x: 0, y: 0, z: 0}
-  waterLevel: 1
+  waterLevel: 3
   swimLimits: {x: 5, y: 5, z: 5}
-  numFish: 4
+  numFish: 15
   allFish: []
   minSpeed: 0.13
   maxSpeed: 0.75
@@ -1794,9 +1794,9 @@ MonoBehaviour:
   goal1: {x: 0, y: 0, z: 0}
   goal2: {x: 0, y: 0, z: 0}
   goalActual: {x: 0, y: 0, z: 0}
-  waterLevel: 1
+  waterLevel: 4
   swimLimits: {x: 5, y: 5, z: 5}
-  numFish: 4
+  numFish: 13
   allFish: []
   minSpeed: 0.27
   maxSpeed: 1.99
@@ -1940,9 +1940,9 @@ MonoBehaviour:
   goal1: {x: 0, y: 0, z: 0}
   goal2: {x: 0, y: 0, z: 0}
   goalActual: {x: 0, y: 0, z: 0}
-  waterLevel: 1
+  waterLevel: 4
   swimLimits: {x: 5, y: 5, z: 5}
-  numFish: 4
+  numFish: 17
   allFish: []
   minSpeed: 0.29
   maxSpeed: 0.88

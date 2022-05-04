@@ -8,10 +8,12 @@ public class FogOnTrigger : MonoBehaviour
     [SerializeField] float fogDensity = 0.01f;
     private bool isSwimming = false;
 
+    
+
     private void Start()
     {
         RenderSettings.fog = true;
-        RenderSettings.fogColor = Color.green;
+        RenderSettings.fogColor = Color.clear;
             
     }
 
@@ -30,7 +32,8 @@ public class FogOnTrigger : MonoBehaviour
         if(other.CompareTag("Water"))
         {
             isSwimming = true;
-            fogDensity = 0.3f;
+            fogDensity = 0.05f;
+            RenderSettings.fogColor = Color.green;
             
         }
     }
@@ -41,6 +44,7 @@ public class FogOnTrigger : MonoBehaviour
         {
             isSwimming = false;
             fogDensity = 0.01f;
+            RenderSettings.fogColor = Color.clear;
         }
     }
 }
