@@ -12,6 +12,7 @@ TagManager:
   - XRRig
   - Water
   - Whiteboard
+  - Logs
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Whiteboard
   - Post Processing
   - Animals
-  - 
+  - Logs
   - 
   - 
   - 
